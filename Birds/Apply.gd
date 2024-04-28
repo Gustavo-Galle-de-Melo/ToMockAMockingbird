@@ -10,7 +10,13 @@ const colored_close: String = "[color=gray])[/color]"	# ")"
 
 
 func _init(left: Bird, right: Bird) -> void:
-	super(false, left.size + right.size, left.depth + 1, left.leftmost_leaf)
+	super(
+		false,
+		left.size + right.size,
+		left.depth + 1,
+		left.leftmost_leaf,
+		left.contains_var or right.contains_var
+	)
 	self.left = left
 	self.right = right
 
@@ -116,6 +122,111 @@ func eval() -> Eval_result:
 		return Eval_result.new(new_expr, leftmost_leaf, string_before, string_after)
 
 
+func introduce_fake_var(next_var: int) -> Eval_result:
+	if leftmost_leaf is Simple_bird and contains_var:
+		var new_var: Var = Var.new(next_var)
+		new_var.is_fake = true
+		
+		var new_bird: Bird = Lambda.new(next_var, new(self, new_var))
+		return Eval_result.new(
+			new_bird,
+			new_var,
+			string(true),
+			new_bird.string(true)
+		)
+	
+	else:
+		var left_result: Eval_result = left.introduce_fake_var(next_var)
+		if left_result.rule:
+			var string_right: String = strings(true)[1]
+			
+			var string_left_before: String = left_result.string_before
+			if Settings.full_string and not left.is_leaf:
+				string_left_before = colored_open + string_left_before + colored_close
+			
+			var string_left_after: String = left_result.string_after
+			if Settings.full_string and not left_result.new_bird.is_leaf:
+				string_left_after = colored_open + string_left_after + colored_close
+			
+			return Eval_result.new(
+				new(left_result.new_bird, right),
+				left_result.rule,
+				string_left_before + " " + string_right,
+				string_left_after + " " + string_right
+			)
+		
+		var right_result: Eval_result = right.introduce_fake_var(next_var)
+		if right_result.rule:
+			var string_left: String = strings(true)[0]
+			
+			var string_right_before: String = right_result.string_before
+			if not right.is_leaf:
+				string_right_before = colored_open + string_right_before + colored_close
+			
+			var string_right_after: String = right_result.string_after
+			if not right_result.new_bird.is_leaf:
+				string_right_after = colored_open + string_right_after + colored_close
+			
+			return Eval_result.new(
+				new(left, right_result.new_bird),
+				right_result.rule,
+				string_left + " " + string_right_before,
+				string_left + " " + string_right_after
+			)
+		
+		return Eval_result.new(self, null, string(true), string(true))
+
+
+func eliminate_fake_var() -> Eval_result:
+	var left_result: Eval_result = left.eliminate_fake_var()
+	
+	if not left_result:
+		return null
+	
+	if left_result.rule:
+		var string_right: String = strings(true)[1]
+		
+		var string_left_before: String = left_result.string_before
+		if Settings.full_string and not left.is_leaf:
+			string_left_before = colored_open + string_left_before + colored_close
+		
+		var string_left_after: String = left_result.string_after
+		if Settings.full_string and not left_result.new_bird.is_leaf:
+			string_left_after = colored_open + string_left_after + colored_close
+		
+		return Eval_result.new(
+			new(left_result.new_bird, right),
+			left_result.rule,
+			string_left_before + " " + string_right,
+			string_left_after + " " + string_right
+		)
+	
+	var right_result: Eval_result = right.eliminate_fake_var()
+	
+	if not right_result:
+		return null
+	
+	if right_result.rule:
+		var string_left: String = strings(true)[0]
+		
+		var string_right_before: String = right_result.string_before
+		if not right.is_leaf:
+			string_right_before = colored_open + string_right_before + colored_close
+		
+		var string_right_after: String = right_result.string_after
+		if not right_result.new_bird.is_leaf:
+			string_right_after = colored_open + string_right_after + colored_close
+		
+		return Eval_result.new(
+			new(left, right_result.new_bird),
+			right_result.rule,
+			string_left + " " + string_right_before,
+			string_left + " " + string_right_after
+		)
+	
+	return Eval_result.new(self, null, string(true), string(true))
+
+
 func set_vars(values: Array[Bird]) -> Bird:
 	return new(left.set_vars(values), right.set_vars(values))
 
@@ -130,6 +241,10 @@ func set_vars_string(values: Array[Bird]) -> String:
 		right_string = colored_open + right_string + colored_close
 	
 	return left_string + " " + right_string
+
+
+func contains_fake_var(var_id: int) -> bool:
+	return left.contains_fake_var(var_id) or right.contains_fake_var(var_id)
 
 
 func simplify(formula: Bird, bird: Simple_bird) -> Bird:

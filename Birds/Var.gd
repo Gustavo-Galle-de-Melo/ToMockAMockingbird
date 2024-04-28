@@ -5,13 +5,25 @@ extends Bird
 # 0 = x, 1 = y, 2 = z, ...
 var id: int
 
+# variables that are introduced inside parenthesis
+# they must not be present in the final expression
+var is_fake: bool = false
+
 
 func _init(id: int) -> void:
-	super(true, 0, 0, self)
+	super(true, 0, 0, self, true)
 	self.id = id
 
 
 func eval() -> Eval_result:
+	return Eval_result.new(self, null, string(true), string(true))
+
+
+func introduce_fake_var(next_var: int) -> Eval_result:
+	return Eval_result.new(self, null, string(true), string(true))
+
+
+func eliminate_fake_var() -> Eval_result:
 	return Eval_result.new(self, null, string(true), string(true))
 
 
@@ -27,12 +39,16 @@ func set_vars_string(values: Array[Bird]) -> String:
 	return "[color=%s]" % color + string + "[/color]"
 
 
+func contains_fake_var(var_id: int) -> bool:
+	return is_fake and id == var_id
+
+
 func simplify(formula: Bird, bird: Simple_bird) -> Bird:
 	return self
 
 
 func equals(bird: Bird) -> bool:
-	return bird is Var and bird.id == id
+	return bird is Var and bird.id == id and bird.is_fake == is_fake
 
 
 func string(color: bool) -> String:
@@ -45,10 +61,13 @@ func string(color: bool) -> String:
 		# these variables will only be visually the same, internally they are still different
 		letter = "?"
 	
-	if color:
-		return "[color=blanched_almond]" + letter + "[/color]"
-	else:
+	if not color:
 		return letter
+	elif is_fake:
+		var hint: String = "This bird is imaginary, it must not be present in the final result"
+		return "[color=darkred][hint=%s]" % hint + letter + "[/hint][/color]"
+	else:
+		return "[color=blanched_almond]" + letter + "[/color]"
 
 
 func rule_string() -> String:

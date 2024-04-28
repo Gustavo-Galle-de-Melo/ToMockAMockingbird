@@ -10,7 +10,7 @@ var formula: Bird
 
 
 func _init(full_name: String, symbol: String, args: int, formula: Bird) -> void:
-	super(true, 1, 0, self)
+	super(true, 1, 0, self, false)
 	self.full_name = full_name
 	self.symbol = symbol
 	self.args = args
@@ -21,12 +21,24 @@ func eval() -> Eval_result:
 	return Eval_result.new(self, null, string(true), string(true))
 
 
+func introduce_fake_var(next_var: int) -> Eval_result:
+	return Eval_result.new(self, null, string(true), string(true))
+
+
+func eliminate_fake_var() -> Eval_result:
+	return Eval_result.new(self, null, string(true), string(true))
+
+
 func set_vars(values: Array[Bird]) -> Bird:
 	return self
 
 
 func set_vars_string(values: Array[Bird]) -> String:
 	return string(true)
+
+
+func contains_fake_var(var_id: int) -> bool:
+	return false
 
 
 func simplify(formula: Bird, bird: Simple_bird) -> Bird:

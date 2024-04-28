@@ -27,7 +27,7 @@ static var levels: Array[Array] = [
 	[4, "M=KW", 3],		# M = W P {P = W K}
 	[4, "A=KW", 3],		# A = K P {P = W K}
 	# new: B
-	[5, "P=BC", 3],		# P = B C C
+	[1, "P=BC", 3],		# P = B C C # TODO
 	[5, "P=BR", 7],		# P = B C C {C = R R R}
 	[5, "P=BKM", 3],	# P = B M K
 	[5, "R=BT", 3],		# R = B B T

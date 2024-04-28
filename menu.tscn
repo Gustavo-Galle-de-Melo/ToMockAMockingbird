@@ -62,7 +62,7 @@ offset_left = 1287.0
 offset_top = 365.0
 offset_right = -383.0
 offset_bottom = -402.0
-number = 2
+number = 19
 
 [node name="TutorialR" type="Sprite2D" parent="."]
 position = Vector2(1775, 489)
