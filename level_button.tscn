@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://20mm1xqxol7d"]
+
+[ext_resource type="Script" path="res://Level_button.gd" id="1_ftq8k"]
+[ext_resource type="Texture2D" uid="uid://deiajlbd3672s" path="res://assets/emptyStar.png" id="1_sdb1d"]
+[ext_resource type="Texture2D" uid="uid://kbmp1nfns2ir" path="res://assets/unbeaten.png" id="3_oblud"]
+[ext_resource type="Texture2D" uid="uid://ddxyogcxd6ulk" path="res://assets/lock.png" id="4_0371y"]
+
+[node name="Level_button" type="Control"]
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1670.0
+offset_bottom = -767.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftq8k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 250.0
+color = Color(2.40654e-08, 0.259282, 0.322096, 1)
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 100
+text = "42"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_top = 183.0
+offset_right = 250.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 30
+text = "A B C ➝ D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 250.0
+texture_disabled = ExtResource("4_0371y")
+
+[node name="Star" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 66.0
+offset_bottom = 66.0
+tooltip_text = "Beat this level with ? birds or less"
+texture = ExtResource("1_sdb1d")
+
+[node name="Unbeaten" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 250.0
+offset_bottom = 50.0
+tooltip_text = "This level has not been beaten yet"
+texture = ExtResource("3_oblud")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

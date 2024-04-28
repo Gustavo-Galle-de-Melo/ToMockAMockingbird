@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://2lf0g2no4dbp"]
+
+[ext_resource type="Script" path="res://Level/Info.gd" id="1_x0fwr"]
+[ext_resource type="Texture2D" uid="uid://055qyni1yr71" path="res://assets/Null.png" id="2_o2fdg"]
+
+[node name="Info" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1608.0
+offset_bottom = -615.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x0fwr")
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(152.5, 121)
+texture = ExtResource("2_o2fdg")
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 23.5
+offset_top = 230.0
+offset_right = 282.5
+offset_bottom = 344.0
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/italics_font_size = 23
+theme_override_font_sizes/bold_italics_font_size = 23
+theme_override_font_sizes/mono_font_size = 23
+bbcode_enabled = true
+text = "Name: unknown
+Rule: unknown
+Size: ? birds"
+fit_content = true
+autowrap_mode = 0

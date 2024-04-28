@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://cgorna674yjsn"]
+
+[ext_resource type="Script" path="res://Level.gd" id="1_t7y3m"]
+[ext_resource type="PackedScene" uid="uid://bkm4mr6ysiayc" path="res://analyzer.tscn" id="3_eqv3v"]
+[ext_resource type="PackedScene" uid="uid://164nkmlea44s" path="res://goal.tscn" id="3_skkeb"]
+[ext_resource type="PackedScene" uid="uid://2lf0g2no4dbp" path="res://info.tscn" id="4_dbre2"]
+[ext_resource type="PackedScene" uid="uid://cr0tal12xa4ah" path="res://available_birds.tscn" id="5_qyea6"]
+[ext_resource type="Texture2D" uid="uid://dk4b4s0fwh6uh" path="res://assets/next.png" id="6_3rcy3"]
+[ext_resource type="Texture2D" uid="uid://b6845dx0n1khe" path="res://assets/skip.png" id="7_t13tr"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_t7y3m")
+
+[node name="Analyzer" parent="." instance=ExtResource("3_eqv3v")]
+offset_top = 582.0
+offset_right = 0.0
+offset_bottom = 582.0
+
+[node name="Goal" parent="." instance=ExtResource("3_skkeb")]
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Info" parent="." instance=ExtResource("4_dbre2")]
+offset_left = 1183.0
+offset_right = 1183.0
+offset_bottom = 0.0
+
+[node name="Available_birds" parent="." instance=ExtResource("5_qyea6")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = 1520.0
+offset_right = 1920.0
+grow_vertical = 1
+size_flags_horizontal = 8
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 73.0
+offset_top = 404.0
+offset_right = 173.0
+offset_bottom = 504.0
+texture_normal = ExtResource("6_3rcy3")
+texture_disabled = ExtResource("7_t13tr")
+
+[connection signal="bird_found" from="Analyzer" to="." method="_on_analyzer_bird_found"]
+[connection signal="bird_selected" from="Available_birds" to="." method="_on_available_birds_bird_selected"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

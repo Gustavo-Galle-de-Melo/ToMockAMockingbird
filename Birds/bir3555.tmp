@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://wi7f7gpq6uvd"]
+
+[ext_resource type="Script" path="res://Birds/Bird_instance.gd" id="1_bsvv8"]
+[ext_resource type="Texture2D" uid="uid://055qyni1yr71" path="res://assets/Null.png" id="1_qto5h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq08t"]
+size = Vector2(258, 193)
+
+[node name="Bird_instance" type="Node2D"]
+script = ExtResource("1_bsvv8")
+
+[node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_qto5h")
+
+[node name="Symbol" type="RichTextLabel" parent="."]
+offset_left = -101.0
+offset_top = 66.0
+offset_right = 101.0
+offset_bottom = 121.0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+bbcode_enabled = true
+text = "[center]?[/center]"
+fit_content = true
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="Rectangle" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 0.5)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_jq08t")
+
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_mouse_entered_hitbox"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_mouse_exited_hitbox"]

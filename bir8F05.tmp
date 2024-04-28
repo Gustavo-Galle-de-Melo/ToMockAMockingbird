@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d101t6fuo72vv"]
+
+[ext_resource type="Script" path="res://Bird_button.gd" id="1_vijv6"]
+[ext_resource type="Texture2D" uid="uid://055qyni1yr71" path="res://assets/Null.png" id="2_2myvt"]
+
+[node name="Bird_button" type="Control"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1720.0
+offset_bottom = -817.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vijv6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 200.0
+color = Color(1, 0.627451, 1, 1)
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(103, 79)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_2myvt")
+
+[node name="Symbol" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 137.0
+offset_right = 200.0
+offset_bottom = 200.0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+bbcode_enabled = true
+text = "[center]?[/center]"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
