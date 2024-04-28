@@ -50,18 +50,21 @@ offset_bottom = 50.0
 [node name="Menu" type="Button" parent="Options"]
 layout_mode = 2
 tooltip_text = "Go back to the main menu"
+focus_mode = 0
 theme_override_font_sizes/font_size = 25
 text = " Menu "
 
 [node name="Clear" type="Button" parent="Options"]
 layout_mode = 2
 tooltip_text = "Remove all birds from the screen"
+focus_mode = 0
 theme_override_font_sizes/font_size = 25
 text = " Clear screen "
 
 [node name="Reset" type="Button" parent="Options"]
 layout_mode = 2
 tooltip_text = "Restart the level, all birds will be forgotten"
+focus_mode = 0
 theme_override_font_sizes/font_size = 25
 text = " Reset level "
 
@@ -93,6 +96,7 @@ offset_left = 1074.0
 offset_top = 70.0
 offset_right = 1209.0
 offset_bottom = 136.0
+focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = " Analyze "
 

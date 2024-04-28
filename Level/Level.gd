@@ -157,7 +157,6 @@ func select_bird(bird: Bird, full_bird_size: int) -> void:
 func _on_analyze_pressed() -> void:
 	$Analyzer.set_bird($Info.bird, $Info.full_bird_size)
 	$Analyzer.visible = true
-	$Analyze.release_focus()
 
 
 # moves a bird to the foreground
@@ -253,7 +252,6 @@ func _on_clear_pressed() -> void:
 	for bird in all_birds:
 		bird.queue_free()
 	all_birds = []
-	$Options/Clear.release_focus()
 
 
 func _on_reset_pressed() -> void:

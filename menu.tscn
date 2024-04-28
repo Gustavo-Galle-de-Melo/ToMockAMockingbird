@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://p4ysyjb3a6n3"]
+[gd_scene load_steps=6 format=3 uid="uid://p4ysyjb3a6n3"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_byeje"]
 [ext_resource type="PackedScene" uid="uid://20mm1xqxol7d" path="res://level_button.tscn" id="1_e20au"]
+[ext_resource type="Texture2D" uid="uid://cops7pr6ekpxr" path="res://assets/settings.png" id="2_lfjkg"]
 [ext_resource type="Texture2D" uid="uid://brdngxuonuo0g" path="res://icon.svg" id="2_o8sph"]
+[ext_resource type="PackedScene" uid="uid://d2llwx2eh21li" path="res://settings_menu.tscn" id="3_7681u"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -20,6 +22,22 @@ offset_left = 3041.0
 offset_right = 4961.0
 offset_bottom = 1017.0
 color = Color(0.192157, 0.192157, 0.52549, 0.14902)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Settings_button" type="TextureButton" parent="CanvasLayer"]
+offset_left = 899.0
+offset_top = 915.0
+offset_right = 979.0
+offset_bottom = 995.0
+texture_normal = ExtResource("2_lfjkg")
+
+[node name="Settings_menu" parent="CanvasLayer" instance=ExtResource("3_7681u")]
+visible = false
+offset_left = 651.0
+offset_top = 368.0
+offset_right = -769.0
+offset_bottom = -449.0
 
 [node name="Mouse" type="Marker2D" parent="."]
 
@@ -62,7 +80,7 @@ offset_left = 1287.0
 offset_top = 365.0
 offset_right = -383.0
 offset_bottom = -402.0
-number = 19
+number = 2
 
 [node name="TutorialR" type="Sprite2D" parent="."]
 position = Vector2(1775, 489)
@@ -158,3 +176,5 @@ number = 2
 position = Vector2(5122, 530)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("2_o8sph")
+
+[connection signal="pressed" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_pressed"]

@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2llwx2eh21li"]
+
+[ext_resource type="Script" path="res://Settings_menu.gd" id="1_wquib"]
+
+[node name="Settings_menu" type="Control"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1420.0
+offset_bottom = -817.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wquib")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 200.0
+mouse_filter = 1
+color = Color(0.137255, 0.164706, 0.176471, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 200.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Full_string" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HBoxContainer/VBoxContainer/Full_string"]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+button_pressed = true
+text = "Show all parenthesis"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Full_string"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+mouse_filter = 1
+bbcode_enabled = true
+text = "e.g. ((A ((B C) D)) x) (y z)"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/Full_string/CheckButton" to="." method="_on_full_string_toggled"]
