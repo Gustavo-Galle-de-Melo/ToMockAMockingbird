@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://p4ysyjb3a6n3"]
+[gd_scene load_steps=10 format=3 uid="uid://p4ysyjb3a6n3"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_byeje"]
 [ext_resource type="PackedScene" uid="uid://20mm1xqxol7d" path="res://level_button.tscn" id="1_e20au"]
 [ext_resource type="Texture2D" uid="uid://cops7pr6ekpxr" path="res://assets/settings.png" id="2_lfjkg"]
 [ext_resource type="Texture2D" uid="uid://brdngxuonuo0g" path="res://icon.svg" id="2_o8sph"]
 [ext_resource type="PackedScene" uid="uid://d2llwx2eh21li" path="res://settings_menu.tscn" id="3_7681u"]
+[ext_resource type="PackedScene" uid="uid://bj2drrivwhsj4" path="res://Tutorials/tutorial_button.tscn" id="5_5jkgm"]
+[ext_resource type="PackedScene" uid="uid://bag07vjcfvakk" path="res://Tutorials/introduction1.tscn" id="6_rlt80"]
+[ext_resource type="PackedScene" uid="uid://bjctb7c6b0gl7" path="res://Tutorials/how_to_play1.tscn" id="7_xr8i7"]
+[ext_resource type="PackedScene" uid="uid://b3tcwrjr4xhew" path="res://Tutorials/tutorial_robin.tscn" id="8_rr31w"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -26,18 +30,24 @@ color = Color(0.192157, 0.192157, 0.52549, 0.14902)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Settings_button" type="TextureButton" parent="CanvasLayer"]
-offset_left = 899.0
-offset_top = 915.0
-offset_right = 979.0
-offset_bottom = 995.0
+offset_left = 920.0
+offset_top = 906.0
+offset_right = 1000.0
+offset_bottom = 986.0
 texture_normal = ExtResource("2_lfjkg")
 
 [node name="Settings_menu" parent="CanvasLayer" instance=ExtResource("3_7681u")]
 visible = false
-offset_left = 651.0
-offset_top = 368.0
-offset_right = -769.0
-offset_bottom = -449.0
+offset_left = 710.0
+offset_top = 440.0
+offset_right = -710.0
+offset_bottom = -377.0
+
+[node name="Transition" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1017.0
+color = Color(0, 0, 0, 1)
 
 [node name="Mouse" type="Marker2D" parent="."]
 
@@ -46,6 +56,7 @@ limit_left = 0
 limit_top = 0
 limit_bottom = 0
 position_smoothing_enabled = true
+position_smoothing_speed = 0.0
 drag_horizontal_enabled = true
 drag_left_margin = 0.7
 drag_top_margin = 1.0
@@ -54,127 +65,150 @@ drag_bottom_margin = 1.0
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
+[node name="Scroll_cooldown" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
 [node name="Sandbox" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
 offset_left = 148.0
-offset_top = 350.0
+offset_top = 406.0
 offset_right = -1522.0
-offset_bottom = -417.0
+offset_bottom = -361.0
 
-[node name="TutorialCPT" type="Sprite2D" parent="."]
-position = Vector2(637, 480)
-scale = Vector2(1.9375, 1.9375)
-texture = ExtResource("2_o8sph")
+[node name="Tutorial_CPT" parent="." instance=ExtResource("5_5jkgm")]
+layout_mode = 1
+offset_left = 493.0
+offset_top = 406.0
+offset_right = -1177.0
+offset_bottom = -361.0
+title = "Introduction to birds"
+tutorial = ExtResource("6_rlt80")
+
+[node name="Tutorial_gameplay" parent="." instance=ExtResource("5_5jkgm")]
+layout_mode = 1
+offset_left = 841.0
+offset_top = 408.0
+offset_right = -829.0
+offset_bottom = -359.0
+title = "How to play"
+tutorial = ExtResource("7_xr8i7")
 
 [node name="Level1" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 899.0
-offset_top = 352.0
-offset_right = -771.0
-offset_bottom = -415.0
+offset_left = 1215.0
+offset_top = 408.0
+offset_right = -455.0
+offset_bottom = -359.0
 number = 1
 
 [node name="Level2" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 1287.0
-offset_top = 365.0
-offset_right = -383.0
-offset_bottom = -402.0
+offset_left = 1558.0
+offset_top = 408.0
+offset_right = -112.0
+offset_bottom = -359.0
 number = 2
 
-[node name="TutorialR" type="Sprite2D" parent="."]
-position = Vector2(1775, 489)
-scale = Vector2(1.9375, 1.9375)
-texture = ExtResource("2_o8sph")
+[node name="Tutorial_R" parent="." instance=ExtResource("5_5jkgm")]
+layout_mode = 1
+offset_left = 1901.0
+offset_top = 421.0
+offset_right = 231.0
+offset_bottom = -346.0
+title = "Robin"
+tutorial = ExtResource("8_rr31w")
+section = 2
 
 [node name="Level3" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 1970.0
+offset_left = 2220.0
 offset_top = 230.0
-offset_right = 300.0
+offset_right = 550.0
 offset_bottom = -537.0
 number = 3
 
 [node name="Level4" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 2220.0
+offset_left = 2470.0
 offset_top = 541.0
-offset_right = 550.0
+offset_right = 800.0
 offset_bottom = -226.0
 number = 4
 
 [node name="Level5" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 2470.0
+offset_left = 2720.0
 offset_top = 230.0
-offset_right = 800.0
+offset_right = 1050.0
 offset_bottom = -537.0
 number = 5
 
 [node name="Level6" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 2720.0
+offset_left = 2970.0
 offset_top = 532.0
-offset_right = 1050.0
+offset_right = 1300.0
 offset_bottom = -235.0
 number = 6
 
 [node name="TutorialAK" type="Sprite2D" parent="."]
-position = Vector2(3222, 503)
+position = Vector2(3472, 503)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("2_o8sph")
 
 [node name="Level7" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 3412.0
+offset_left = 3662.0
 offset_top = 230.0
-offset_right = 1742.0
+offset_right = 1992.0
 offset_bottom = -537.0
 number = 7
 
 [node name="Level8" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 3569.0
+offset_left = 3819.0
 offset_top = 541.0
-offset_right = 1899.0
+offset_right = 2149.0
 offset_bottom = -226.0
 number = 8
 
 [node name="Level9" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 3889.0
+offset_left = 4139.0
 offset_top = 480.0
-offset_right = 2219.0
+offset_right = 2469.0
 offset_bottom = -287.0
 number = 9
 
 [node name="Level10" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 4089.0
+offset_left = 4339.0
 offset_top = 185.0
-offset_right = 2419.0
+offset_right = 2669.0
 offset_bottom = -582.0
 number = 10
 
 [node name="Level11" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 4404.0
+offset_left = 4654.0
 offset_top = 100.0
-offset_right = 2734.0
+offset_right = 2984.0
 offset_bottom = -667.0
 number = 11
 
 [node name="Level12" parent="." instance=ExtResource("1_e20au")]
 layout_mode = 1
-offset_left = 4604.0
+offset_left = 4854.0
 offset_top = 403.0
-offset_right = 2934.0
+offset_right = 3184.0
 offset_bottom = -364.0
 number = 2
 
 [node name="TutorialMW" type="Sprite2D" parent="."]
-position = Vector2(5122, 530)
+position = Vector2(5372, 530)
 scale = Vector2(1.9375, 1.9375)
 texture = ExtResource("2_o8sph")
 
 [connection signal="pressed" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="timeout" from="Scroll_cooldown" to="." method="_on_scroll_cooldown_timeout"]

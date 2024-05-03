@@ -44,6 +44,7 @@ texture_normal = ExtResource("4_rl4cg")
 texture_pressed = ExtResource("3_6bfos")
 
 [node name="Skip" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 414.0
 offset_top = 299.0

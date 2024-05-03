@@ -57,7 +57,7 @@ func setup_level() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if $Analyzer.visible and not $Analyzer.is_mouse_over and \
-			(event.is_action("left_click") or event.is_action("right_click")) and event.pressed:
+			event.is_action("exit_interface") and event.pressed:
 		# if the player clicks off the analyzer, hide it
 		$Analyzer.visible = false
 		return
@@ -227,10 +227,14 @@ func set_star_text() -> void:
 	var star_size: String = str(Level_loader.get_level_star_size(level))
 	if not Player_data.get_instance().has_beaten_level(level):
 		star_size = "[hint=beat the level to find out]?[/hint]"
-	$Options/V_Center/Star.text = \
+	var has_star: bool = Player_data.get_instance().has_star(level)
+	var star_text: String = \
 			" Star: Find the " + $Goal.bird.full_name + \
 			" with " + star_size + " birds or less"
-	$Options/Done.visible = Player_data.get_instance().has_star(level)
+	if has_star:
+		star_text = "[color=yellow]" + star_text + "[/color]"
+	$Options/V_Center/Star.text = star_text
+	$Options/Done.visible = has_star
 
 
 func _on_available_birds_bird_selected(bird: Bird_instance) -> void:

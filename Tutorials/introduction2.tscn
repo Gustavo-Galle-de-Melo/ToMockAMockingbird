@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://3bxpeuuluuqu"]
+
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_iea7d"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iea7d")
+previous = "res://Tutorials/introduction1.tscn"
+next = "res://Tutorials/introduction3.tscn"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 80
+text = "Introduction to birds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 180.0
+offset_right = 1828.0
+offset_bottom = 878.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Parrot: A parrot is a bird [color=papaya_whip]P[/color] that satisfies the following condition for any bird [color=yellow]x[/color]:
+[center][b][color=green]P[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color][/center]
+	In other words, whenever you call out the name of a bird [color=yellow]x[/color] to [color=papaya_whip]P[/color], [color=papaya_whip]P[/color] will simply repeat [color=yellow]x[/color] back to you. Superficially, the bird [color=papaya_whip]P[/color] appears to have no intelligence or imagination; all it can do is repeat what it hears. For this reason, in the past, thoughtless students of ornithology referred to it as the idiot bird. Because of this, this bird is almost always referred to as the bird [color=papaya_whip]I[/color], but we will refrain from using this name here and will stick to [color=papaya_whip]P[/color] instead.
+
+	Thrush: A thrush, also known as [color=papaya_whip]T[/color], is a bit more complicated, for any birds [color=yellow]x[/color] and [color=orange]y[/color], the following condition holds:
+[center]([b][color=green]T[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=orange]y[/color] [color=yellow]x[/color][/center]
+	Whenever [color=papaya_whip]T[/color] hears the name of another bird [color=yellow]x[/color], it responds with the name of a bird [color=papaya_whip]T[/color][color=yellow]x[/color]. Once this new [color=papaya_whip]T[/color][color=yellow]x[/color] bird hears the name of yet another bird [color=orange]y[/color], it then responds with what [color=orange]y[/color] would have said if it heard [color=yellow]x[/color].
+
+	Cardinal: One last bird I need to tell you about for now is the cardinal. The cardinal is again a bit more complicated; it follows this condition:
+[center](([b][color=green]C[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color]) [color=orangered]z[/color] = ([color=yellow]x[/color] [color=orangered]z[/color]) [color=orange]y[/color][/center]
+	When [color=papaya_whip]C[/color] hears a bird [color=yellow]x[/color], it responds by calling out a new bird [color=papaya_whip]C[/color][color=yellow]x[/color]. When [color=papaya_whip]C[/color][color=yellow]x[/color] hears a bird [color=orange]y[/color], it responds with another new bird ([color=papaya_whip]C[/color][color=yellow]x[/color])[color=orange]y[/color]. Finally when ([color=papaya_whip]C[/color][color=yellow]x[/color])[color=orange]y[/color] hears [color=orangered]z[/color], it responds with what [color=yellow]x[/color][color=orangered]z[/color] would have said when hearing [color=orange]y[/color].
+"
+fit_content = true
+scroll_active = false
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 927.0
+offset_right = 154.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Previous "
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1770.0
+offset_top = 927.0
+offset_right = 1890.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Next "
+
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

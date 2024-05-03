@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://bag07vjcfvakk"]
+
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_bgoyt"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bgoyt")
+next = "res://Tutorials/introduction2.tscn"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 80
+text = "Introduction to birds"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 180.0
+offset_right = 1828.0
+offset_bottom = 878.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	A certain enchanted forest is inhabited by talking birds. Given any birds [color=papaya_whip]A[/color] and [color=papaya_whip]B[/color], if you call out the name of [color=papaya_whip]B[/color] to [color=papaya_whip]A[/color], then [color=papaya_whip]A[/color] will respond by calling out the name of some bird to you; this bird we designate by [color=papaya_whip]AB[/color]. Thus, [color=papaya_whip]AB[/color] is the bird named by [color=papaya_whip]A[/color] upon hearing the name of [color=papaya_whip]B[/color]. Instead of constantly using the cumbersome phrase “[color=papaya_whip]A[/color]’s response to hearing the name of [color=papaya_whip]B[/color]”, we shall more simply say: “[color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color]”. Thus [color=papaya_whip]AB[/color] is [color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color]. In general, [color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color] is not necessarily the same as [color=papaya_whip]B[/color]’s response to [color=papaya_whip]A[/color], in symbols, [color=papaya_whip]AB[/color] is not necessarily the same as [color=papaya_whip]BA[/color]. Also, given three birds [color=papaya_whip]A[/color], [color=papaya_whip]B[/color] and [color=papaya_whip]C[/color], the bird [color=papaya_whip]A(BC)[/color] is not necessarily the same as the bird [color=papaya_whip](AB)C[/color]. The bird [color=papaya_whip]A(BC)[/color] is [color=papaya_whip]A[/color]’s response to the bird [color=papaya_whip]BC[/color], whereas the bird [color=papaya_whip](AB)C[/color] is the response of the bird [color=papaya_whip]AB[/color] to the bird [color=papaya_whip]C[/color]. The use of parenthesis is thus necessary to avoid ambiguity; if I just wrote [color=papaya_whip]ABC[/color], you could not possibly know whether I meant the bird [color=papaya_whip]A(BC)[/color] or the bird [color=papaya_whip](AB)C[/color].
+
+	Mockingbirds: By a mockingbird is meant a bird [color=papaya_whip]M[/color] such that for any bird [color=yellow]x[/color], the following condition holds:
+[center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
+	[color=papaya_whip]M[/color] is called the mockingbird for the simple reason that its response to any bird [color=yellow]x[/color] is the same as [color=yellow]x[/color]’s response to itself, in other words, [color=papaya_whip]M[/color] mimics [color=yellow]x[/color] as far as its response to [color=yellow]x[/color] goes. This means that if you call out [color=yellow]x[/color] to [color=papaya_whip]M[/color] or if you call out [color=yellow]x[/color] to itself, you will get the same response either case. This bird can be confusing to talk to, so we will focus on some other birds first.
+"
+fit_content = true
+scroll_active = false
+
+[node name="Previous" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 34.0
+offset_top = 927.0
+offset_right = 154.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Previous "
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1770.0
+offset_top = 927.0
+offset_right = 1890.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Next "
+
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

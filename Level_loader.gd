@@ -5,8 +5,8 @@ class_name Level_loader
 static var levels: Array[Array] = [
 	# tutorial
 	# new: C, P, T
-	[1, "T=CP", 2],		# T = C P
 	[1, "P=CT", 2],		# P = C T
+	[1, "T=CP", 2],		# T = C P
 	# new: R
 	[2, "R=CPT", 2],	# R = C C
 	[2, "C=R", 3],		# C = R R R
