@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3nm66nj7jl4i"]
+[gd_scene load_steps=2 format=3 uid="uid://d2k427h77h8wo"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_6v2x0"]
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_uatvv"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -9,21 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6v2x0")
+script = ExtResource("1_uatvv")
+next = "res://menu.tscn"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 80
-text = "Title"
+text = "Starling"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 124.0
-offset_top = 180.0
+offset_top = 367.0
 offset_right = 1828.0
 offset_bottom = 927.0
 theme_override_font_sizes/normal_font_size = 30
@@ -32,11 +33,14 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "Lorem ipsum"
+text = "[center](([b][color=green]S[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color]) [color=orangered]z[/color] = ([color=yellow]x[/color] [color=orangered]z[/color]) ([color=orange]y[/color] [color=orangered]z[/color])     or     [b][color=green]S[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] [color=orangered]z[/color] = [color=yellow]x[/color] [color=orangered]z[/color] ([color=orange]y[/color] [color=orangered]z[/color])[/center]
+
+	The starling is a very skilled bird, it can change the order of the conversation like the thrush, it can allow birds to talk multiple times like a mockingbird and it can introduce parenthesis like the bluebird. It is also a very important bird, but I’ll tell you more about its importance later"
 fit_content = true
 scroll_active = false
 
 [node name="Previous" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 34.0
 offset_top = 927.0
@@ -52,7 +56,7 @@ offset_top = 927.0
 offset_right = 1890.0
 offset_bottom = 990.0
 theme_override_font_sizes/font_size = 40
-text = " Next "
+text = " Menu "
 
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

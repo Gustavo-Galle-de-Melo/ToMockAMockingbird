@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bluhuo0lglfmr"]
+
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_y47jf"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y47jf")
+previous = "res://Tutorials/tutorial_owl1.tscn"
+next = "res://menu.tscn"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 80
+text = "Owl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 180.0
+offset_right = 1828.0
+offset_bottom = 927.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "Case 3: [color=papaya_whip]O[/color] [color=papaya_whip]X[/color] [color=papaya_whip]Y[/color]
+	This becomes [color=papaya_whip]Y[/color]([color=papaya_whip]X[/color][color=papaya_whip]Y[/color]), but since none of the birds involved in this are variables, then we could have simply said [color=papaya_whip]Y[/color] to [color=papaya_whip]X[/color] and then [color=papaya_whip]XY[/color] to [color=papaya_whip]Y[/color], without needing to talk to the owl. Thus, in this case the owl does not help us to reach the bluebird.
+
+Case 4: [color=papaya_whip]O[/color] [color=yellow]x[/color] [color=papaya_whip]Y[/color]
+	This becomes [color=papaya_whip]Y[/color]([color=yellow]x[/color][color=papaya_whip]Y[/color]), since we can choose what bird [color=papaya_whip]Y[/color] is, this conversation can continue, however we have lost [color=yellow]x[/color], now we only have access to [color=yellow]x[/color]’s response to [color=papaya_whip]Y[/color], which is useless if [color=yellow]x[/color] can be any bird. If we make another copy of ‘[color=yellow]x[/color]’ before [color=papaya_whip]O[/color][color=yellow]x[/color][color=papaya_whip]Y[/color], we will have access to the original [color=yellow]x[/color], but we still do not make any progress, so this case is still not useful to reach the bluebird.
+
+	Since it is clear that the bluebird cannot be reached by birds that don’t introduce parenthesis at all, and none of the ways the owl can be used can make any progress in reaching [color=yellow]x[/color]([color=orange]y[/color][color=orangered]z[/color]), then we can conclude that the owl’s ability to introduce parenthesis is actually “fake”, it still needs help from other parenthesis-introducing birds to reach [color=papaya_whip]B[/color].
+"
+fit_content = true
+scroll_active = false
+
+[node name="Previous" type="Button" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 927.0
+offset_right = 154.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Previous "
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1770.0
+offset_top = 927.0
+offset_right = 1890.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Menu "
+
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

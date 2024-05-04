@@ -29,7 +29,6 @@ theme_override_font_sizes/font_size = 30
 text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 0

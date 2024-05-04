@@ -1,6 +1,6 @@
 extends Control
 
-@export var title: String
+@export_multiline var title: String
 @export var tutorial: PackedScene
 @export var section: int
 

@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3ko2mtgh8s6b"]
+
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_y8iiv"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8iiv")
+next = "res://Tutorials/tutorial_owl2.tscn"
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 80
+text = "Owl"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 180.0
+offset_right = 1828.0
+offset_bottom = 927.0
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "[center]([b][color=green]O[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=orange]y[/color] ([color=yellow]x[/color] [color=orange]y[/color])     or     [b][color=green]O[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=orange]y[/color] ([color=yellow]x[/color] [color=orange]y[/color])[/center]
+
+	Like the lark, the owl introduces parenthesis while allowing a bird to speak multiple times, but unlike the lark, the owl introduces parenthesis around two different birds. However, this is still not enough to introduce parenthesis around any three birds like the bluebird can. Although not intuitive, this can be shown by considering all the ways the owl can be used and showing that none of them can make progress in reaching [color=papaya_whip]B[/color]. In the following cases, let [color=yellow]x[/color] and [color=orange]y[/color] be any two birds like we have been using these variables so far, and let [color=papaya_whip]X[/color] and [color=papaya_whip]Y[/color] be known combinations of birds that can be reached using the owl or birds that don’t introduce parenthesis. We can choose what [color=papaya_whip]X[/color] and [color=papaya_whip]Y[/color] are but not [color=yellow]x[/color] and [color=orange]y[/color], since [color=yellow]x[/color] and [color=orange]y[/color] represent every possible bird.
+
+Case 1: [color=papaya_whip]O[/color] [color=yellow]x[/color] [color=orange]y[/color]
+	If both birds are variables, the result is simply [color=orange]y[/color]([color=yellow]x[/color][color=orange]y[/color]), which is not the [color=yellow]x[/color]([color=orange]y[/color][color=orangered]z[/color]) we are looking for.
+
+Case 2: [color=papaya_whip]O[/color] [color=papaya_whip]X[/color] [color=orange]y[/color]
+	This becomes [color=orange]y[/color]([color=papaya_whip]X[/color][color=orange]y[/color]), [color=orange]y[/color]’s response to [color=papaya_whip]X[/color][color=orange]y[/color]. Since [color=orange]y[/color] can be any bird, we cannot guarantee it is equivalent to [color=yellow]x[/color]([color=orange]y[/color][color=orangered]z[/color]).
+"
+fit_content = true
+scroll_active = false
+
+[node name="Previous" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 34.0
+offset_top = 927.0
+offset_right = 154.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Previous "
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1770.0
+offset_top = 927.0
+offset_right = 1890.0
+offset_bottom = 990.0
+theme_override_font_sizes/font_size = 40
+text = " Next "
+
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

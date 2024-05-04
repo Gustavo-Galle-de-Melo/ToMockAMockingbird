@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3nm66nj7jl4i"]
+[gd_scene load_steps=2 format=3 uid="uid://dwbb8kfvo5uoi"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_6v2x0"]
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_d12jp"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -9,14 +9,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6v2x0")
+script = ExtResource("1_d12jp")
+next = "res://menu.tscn"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 80
-text = "Title"
+text = "Mockingbird and Warbler"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -32,11 +33,23 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "Lorem ipsum"
+text = "	Now that you have some experience rearranging and ignoring birds, it’s time to finally bring back the mockingbird and introduce one of its friends.
+
+	Mockingbird:
+[center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
+
+	Warbler:
+[center]([b][color=green]W[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = ([color=yellow]x[/color] [color=orange]y[/color]) [color=orange]y[/color]     or     [b][color=green]M[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] [color=orange]y[/color] [color=orange]y[/color][/center]
+
+	Both of these birds allow other birds to talk multiple times during a conversation. Using them together with the albatross and kestrel, you can make any bird talk exactly as many times as you want them to.
+
+	Here’s something fun to think about: What happens if the mockingbird mocks itself (e.g. [color=papaya_whip]MM[/color])?
+"
 fit_content = true
 scroll_active = false
 
 [node name="Previous" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 34.0
 offset_top = 927.0
@@ -52,7 +65,7 @@ offset_top = 927.0
 offset_right = 1890.0
 offset_bottom = 990.0
 theme_override_font_sizes/font_size = 40
-text = " Next "
+text = " Menu "
 
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

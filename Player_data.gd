@@ -21,22 +21,22 @@ static func get_instance() -> Player_data:
 # TODO: read some file
 func _init() -> void:
 	for bird in Bird_list.all_birds:
-		known_birds[bird.symbol] = true # TODO: false
+		known_birds[bird.symbol] = false
 	level_stars = []
 	level_stars.resize(len(Level_loader.levels))
 	level_stars.fill(false)
 	level_beaten = []
 	level_beaten.resize(len(Level_loader.levels))
 	level_beaten.fill(false)
-	section = 1
+	set_section(15)
 
 
 func is_known(bird: Simple_bird) -> bool:
 	return known_birds[bird.symbol]
 
 
-func set_known(bird: Simple_bird) -> void:
-	known_birds[bird.symbol] = true
+func set_known(bird: String) -> void:
+	known_birds[bird] = true
 
 
 func has_star(level: int) -> bool:
@@ -64,4 +64,11 @@ func set_level_beaten(level: int) -> void:
 	if first_unbeaten_level == -1:
 		return
 	
-	section = Level_loader.get_level_section(first_unbeaten_level)
+	set_section(Level_loader.get_level_section(first_unbeaten_level))
+
+
+func set_section(section: int) -> void:
+	self.section = section
+	for s in section:
+		for bird in Level_loader.section_birds[s]:
+			set_known(bird)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3nm66nj7jl4i"]
+[gd_scene load_steps=2 format=3 uid="uid://0bhbm61a78fi"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_6v2x0"]
+[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_bfqd0"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -9,21 +9,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6v2x0")
+script = ExtResource("1_bfqd0")
+next = "res://menu.tscn"
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 180.0
 theme_override_font_sizes/font_size = 80
-text = "Title"
+text = "Nightingale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 124.0
-offset_top = 180.0
+offset_top = 305.0
 offset_right = 1828.0
 offset_bottom = 927.0
 theme_override_font_sizes/normal_font_size = 30
@@ -32,11 +33,14 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "Lorem ipsum"
+text = "[center]([b][color=green]N[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=yellow]x[/color] ([color=yellow]x[/color] [color=orange]y[/color])     or     [b][color=green]N[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] ([color=yellow]x[/color] [color=orange]y[/color])[/center]
+
+	The nightingale completes the [color=papaya_whip]L[/color]-[color=papaya_whip]N[/color]-[color=papaya_whip]O[/color] trio of birds that look like the bluebird but where one of the variables appears twice. Just like the owl, the nightingale introduces parenthesis around two distinct birds, unlike the owl, the nightingale does not have the owl’s weakness of not being able to find the bluebird. So, given non-parenthesis-introducing birds and a nightingale, it is possible to find a bluebird. Although possible, it can be very hard to do so. I will only ask you to do this in the far future, once you have mastered all other birds."
 fit_content = true
 scroll_active = false
 
 [node name="Previous" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 34.0
 offset_top = 927.0
@@ -52,7 +56,7 @@ offset_top = 927.0
 offset_right = 1890.0
 offset_bottom = 990.0
 theme_override_font_sizes/font_size = 40
-text = " Next "
+text = " Menu "
 
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
