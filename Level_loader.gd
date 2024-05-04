@@ -68,7 +68,7 @@ static var levels: Array[Array] = [
 	[11, "P", "CN", 2],		# P = N C
 	[11, "T", "CN", 3],		# T = C P {P = N C}
 	[11, "W", "BCN", 6],	# W = C (B N T) {T = C P, P = N C}
-	[11, "M", "BNPT", 6],	# M = B (T P) (B N T)
+	[11, "M", "BNT", 6],	# M = B (T T) (B N T)
 	[11, "W", "CN", 7],		# W = C (C (N T) N) {T = C P, P = N C}
 	# new: S
 	[12, "O", "SP", 2],		# O = S P
@@ -77,6 +77,7 @@ static var levels: Array[Array] = [
 	[12, "M", "ST", 3],		# M = W T {W = S T}
 	[12, "N", "BPS", 3],	# N = S B P
 	[12, "N", "PQS", 3],	# N = S Q P
+	[12, "L", "BJS", 3],	# L = S B J
 	[12, "S", "BCW", 6],	# S = B (B W) (B B C)
 	[12, "W", "AS", 3],		# W = S S A
 	[12, "W", "SR", 5],		# W = R (S R R) R
@@ -85,9 +86,9 @@ static var levels: Array[Array] = [
 	[13, "P", "DF", 7],		# P = D (F F F) (D D) F
 	[13, "A", "DFJP", 6],	# A = D (F P P) P J
 	[13, "A", "DFJ", 12],	# A = D (F P J) F J {P = D (F F F) (D D) F}
+	[13, "T", "FPQ", 8],	# T = Q (Q F Q) (F P (Q Q))
 	[13, "F", "CD", 15],	# F = D (C D T) C P {T = C P, P = D C C R, R = C C}
 	[13, "F", "CN", 7],		# F = C (C (N T) C) {T = C P, P = N C}
-	[13, "T", "DFQ", 7],	# T = D (F P P) (D Q F)
 	
 	# turing completeness section:
 	[14, "P", "KS", 3],		# P = A K {A = S K}
@@ -99,21 +100,21 @@ static var levels: Array[Array] = [
 	[14, "T", "KS", 7],		# T = S (K O) K {O = S P, P = A _, A = S K}
 	[14, "J", "KS", 8],		# J = K M {M = O P, O = S P, P = A _, A = S K}
 	[14, "N", "KS", 8],		# N = S B P {B = S (K S) K, P = A _, A = S K}
-	[14, "Q", "KS", 8],		# Q = S (K (S O)) K {O = S P, P = A _, A = S K}
+	[14, "Q", "KS", 8],		# Q = S (K (S B)) K {B = S (K S) K}
 	[14, "R", "KS", 8],		# R = S (K (S S)) (S (K K) K)
 	[14, "C", "KS", 10],	# C = S (S (K S) (S (K K) S)) (K K)
 	[14, "D", "KS", 10],	# D = S (K B) B {B = S (K S) K}
-	[14, "L", "KS", 13],	# L = S B (K M) {B = S (K S) K, M = S P P, P = A _, A = S K}
-	[14, "F", "KS", 17],	# F = S (K (S (S (K S) (S (K (O K)))) (S (K K) K) {O = S P, P = A _, A = S K}
+	[14, "L", "KS", 13],	# L = S B J {B = S (K S) K, J = K M, M = S P P, P = A _, A = S K}
+	[14, "F", "KS", 17],	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
 	
 	# hardest levels:
 	[15, "W", "BCM", 5],	# W = C (B M R) {R = C C}
 	[15, "K", "ADFS", 10],	# K = D (F A P) (D D (S F)) A {P = A _}
-	[15, "T", "KMQ", 11],	# T = Q (Q (Q (Q K Q) Q) (Q (K M))) M
+	[15, "T", "KMQ", 11],	# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
 	[15, "C", "FKQ", 15],	# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
 	[15, "P", "FQ", 11],	# P = Q (Q F Q) (F Q (F (Q F) (Q F)))
+	[15, "C", "BF", 16],	# C = B (F (B (B B) F) F) (B (B B) (B F (B (B B) F)))
 	[15, "R", "DT", 21],	# R = D (T (D (T T) (D (D (T T)) (D (T T) (D D))) T)) (D (T T) (D D)) T
-	[15, "C", "BF", 22],	# C = B (F (B (B B) (B F (B (B B) F))) F) (B (B B) (B F (B (B (B B)) F)))
 	[15, "T", "ADFM", 18],	# T = D (F F (D M P)) (D (F A A) (D M (D F (D D)))) F {P = A _}
 	[15, "B", "DFK", 18],	# B = D (F _ (K K)) (D (D (F _ _))) (D (D K) (D D (K D) _))
 	[15, "P", "CJS", 9],	# P = S (S (C J C) C) (C J C) = S (C S) (C S C) (C J C)

@@ -35,7 +35,7 @@ theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
 text = "[center]([b][color=green]L[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=yellow]x[/color] ([color=orange]y[/color] [color=orange]y[/color])     or     [b][color=green]L[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] ([color=orange]y[/color] [color=orange]y[/color])[/center]
 
-	The lark is another bird similar to the bluebird, but only one of the bird is included inside the parenthesis, so in practice it is closer to being a mockingbird or a warbler."
+	The lark is another bird similar to the bluebird, but only one of the birds is included inside the parenthesis, so in practice it is closer to being a mockingbird or a warbler."
 fit_content = true
 scroll_active = false
 

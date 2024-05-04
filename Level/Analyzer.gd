@@ -95,7 +95,7 @@ func _on_next_pressed() -> void:
 			$After.text = current_bird.string(true)
 			$Rule.text = "[hint=Imaginary bird could not be removed]Invalid bird[/hint]"
 			history.append([current_bird, next_var])
-			current_bird = elimination.new_bird
+			halted = true
 			return
 		elif elimination.rule:
 			$Before.text = elimination.string_before

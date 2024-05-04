@@ -39,7 +39,7 @@ text = "	Now that you have some experience rearranging and ignoring birds, it’
 [center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
 
 	Warbler:
-[center]([b][color=green]W[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = ([color=yellow]x[/color] [color=orange]y[/color]) [color=orange]y[/color]     or     [b][color=green]M[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] [color=orange]y[/color] [color=orange]y[/color][/center]
+[center]([b][color=green]W[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = ([color=yellow]x[/color] [color=orange]y[/color]) [color=orange]y[/color]     or     [b][color=green]W[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] [color=orange]y[/color] [color=orange]y[/color][/center]
 
 	Both of these birds allow other birds to talk multiple times during a conversation. Using them together with the albatross and kestrel, you can make any bird talk exactly as many times as you want them to.
 

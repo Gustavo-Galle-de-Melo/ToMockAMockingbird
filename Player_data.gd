@@ -28,7 +28,7 @@ func _init() -> void:
 	level_beaten = []
 	level_beaten.resize(len(Level_loader.levels))
 	level_beaten.fill(false)
-	set_section(15)
+	set_section(1)
 
 
 func is_known(bird: Simple_bird) -> bool:
