@@ -11,7 +11,7 @@ static var levels: Array[Array] = [
 	[2, "R", "CPT", 2],		# R = C C
 	[2, "C", "R", 3],		# C = R R R
 	[2, "T", "PR", 3],		# T = R P R
-	[2, "P", "RT", 3],		# T = R T R
+	[2, "P", "RT", 3],		# P = R T R
 	# new: A, K
 	[3, "P", "A", 2],		# P = A _
 	[3, "A", "KP", 2],		# A = K P
@@ -22,7 +22,6 @@ static var levels: Array[Array] = [
 	# new: M, W
 	[4, "M", "PW", 2],		# M = W P
 	[4, "M", "TW", 2],		# M = W T
-	[4, "P", "AW", 2],		# P = W A
 	[4, "P", "KW", 2],		# P = W K
 	[4, "M", "KW", 3],		# M = W P {P = W K}
 	[4, "A", "KW", 3],		# A = K P {P = W K}
@@ -55,12 +54,12 @@ static var levels: Array[Array] = [
 	[9, "O", "QW", 3],		# O = Q Q W
 	[9, "T", "BKO", 3],		# T = B O K
 	[9, "T", "KOQ", 3],		# T = Q K O
-	[9, "T", "KQW", 5],		# T = Q (Q K Q) W
+	[9, "T", "KQW", 5],		# T = Q (Q K Q) W = Q K (Q Q W)
 	# new: D
 	[10, "D", "B", 3],		# D = B B B
 	[10, "T", "DKO", 5],	# T = D O (K K) _
 	[10, "J", "ADO", 5],	# J = D O P A {P = A _}
-	[10, "P", "CD", 7],		# P = D C C R {R = C C}
+	[10, "P", "CD", 5],		# P = D C C R {R = C C}
 	[10, "B", "CD", 7],		# B = C D P {P = D C C R, R = C C}
 	# new: N
 	[11, "N", "BW", 2],		# N = W B
@@ -79,47 +78,50 @@ static var levels: Array[Array] = [
 	[12, "N", "PQS", 3],	# N = S Q P
 	[12, "L", "BJS", 3],	# L = S B J
 	[12, "S", "BCW", 6],	# S = B (B W) (B B C)
+	[12, "S", "DQW", 6],	# S = D W (Q Q (Q Q))
 	[12, "W", "AS", 3],		# W = S S A
 	[12, "W", "SR", 5],		# W = R (S R R) R
 	# new: F
 	[13, "F", "BC", 4],		# F = B C R {R = C C}
+	[13, "F", "CD", 4],		# F = D C C C				# bad 15: # F = D (C D T) C P {T = C P, P = D C C R, R = C C}
 	[13, "P", "DF", 7],		# P = D (F F F) (D D) F
 	[13, "A", "DFJP", 6],	# A = D (F P P) P J
 	[13, "A", "DFJ", 12],	# A = D (F P J) F J {P = D (F F F) (D D) F}
 	[13, "T", "FPQ", 8],	# T = Q (Q F Q) (F P (Q Q))
-	[13, "F", "CD", 15],	# F = D (C D T) C P {T = C P, P = D C C R, R = C C}
-	[13, "F", "CN", 7],		# F = C (C (N T) C) {T = C P, P = N C}
+	[13, "F", "CN", 6],		# F = C (N R) R {R = C C}	# 7: F = C (C (N T) C) {T = C P, P = N C}
 	
 	# turing completeness section:
-	[14, "P", "KS", 3],		# P = A K {A = S K}
+	[14, "P", "KS", 3],		# P = A _ {A = S K}
 	[14, "A", "KS", 2],		# A = S K
 	[14, "O", "KS", 4],		# O = S P = {P = A K, A = S K}
-	[14, "M", "KS", 7],		# M = O P {O = S P, P = A _, A = S K}
 	[14, "B", "KS", 4],		# B = S (K S) K
 	[14, "W", "KS", 4],		# W = S S A {A = S K}
 	[14, "T", "KS", 7],		# T = S (K O) K {O = S P, P = A _, A = S K}
-	[14, "J", "KS", 8],		# J = K M {M = O P, O = S P, P = A _, A = S K}
-	[14, "N", "KS", 8],		# N = S B P {B = S (K S) K, P = A _, A = S K}
 	[14, "Q", "KS", 8],		# Q = S (K (S B)) K {B = S (K S) K}
 	[14, "R", "KS", 8],		# R = S (K (S S)) (S (K K) K)
 	[14, "C", "KS", 10],	# C = S (S (K S) (S (K K) S)) (K K)
 	[14, "D", "KS", 10],	# D = S (K B) B {B = S (K S) K}
-	[14, "L", "KS", 13],	# L = S B J {B = S (K S) K, J = K M, M = S P P, P = A _, A = S K}
 	[14, "F", "KS", 17],	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
+	
+	[14, "L", "KS", 10],	# S (K W) B {W = S S A, A = S K, B = S (K S) K}		# 13: L = S B J {B = S (K S) K, J = K M, M = S P P, P = A _, A = S K}
+	[14, "N", "KS", 7],		# N = S (S (K (S S)) K) K		# 8: N = S B P {B = S (K S) K, P = A _, A = S K}
+	[14, "M", "KS", 6],		# M = S (S S) S A {A = S K}		# 7: S P P {P = A _, A = S K}
+	[14, "J", "KS", 7],		# J = K M {M = S (S S) S A, A = S L} = S (S B K)	# 8: J = K M {M = O P, O = S P, P = A _, A = S K}
 	
 	# hardest levels:
 	[15, "W", "BCM", 5],	# W = C (B M R) {R = C C}
-	[15, "K", "ADFS", 10],	# K = D (F A P) (D D (S F)) A {P = A _}
 	[15, "T", "KMQ", 11],	# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
 	[15, "C", "FKQ", 15],	# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
-	[15, "P", "FQ", 11],	# P = Q (Q F Q) (F Q (F (Q F) (Q F)))
-	[15, "C", "BF", 16],	# C = B (F (B (B B) F) F) (B (B B) (B F (B (B B) F)))
+	[15, "C", "BF", 15],	# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F	# 16: C = B (F (B (B B) F) F) (B (B B) (B F (B (B B) F)))
 	[15, "R", "DT", 21],	# R = D (T (D (T T) (D (D (T T)) (D (T T) (D D))) T)) (D (T T) (D D)) T
 	[15, "T", "ADFM", 18],	# T = D (F F (D M P)) (D (F A A) (D M (D F (D D)))) F {P = A _}
 	[15, "B", "DFK", 18],	# B = D (F _ (K K)) (D (D (F _ _))) (D (D K) (D D (K D) _))
-	[15, "P", "CJS", 9],	# P = S (S (C J C) C) (C J C) = S (C S) (C S C) (C J C)
+	[15, "P", "CJS", 8],	# P = C (S (C J C) C) R {R = C C}		# bad 8: P = S (S (C J C) C) (C J C) = S (C S) (C S C) (C J C)
 	[15, "L", "CFKNOW", 11],# L = C (C (C (N (W F)) (K O)) T) {T = C P, P = N C}
 	[15, "B", "CFKNO", 38],	# B = C (C (N (T (C (N (C (C (T K) (C (C (N F) N) P)))) (T (C O (R (C (K (C O T)))))))) P) C) {T = C P, P = N C, R = C C}
+	
+	[15, "K", "ADS", 5],	# K = S D (D A _)				# F10: K = D (F A P) (D D (S F)) A {P = A _}
+	[15, "P", "FQ", 10],	# !!! P = Q (F (Q F)) (Q (Q F (Q Q Q)))		# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
 ]
 
 # 1-indexed
