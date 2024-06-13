@@ -33,7 +33,7 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	The rules of all the birds you know so far only contain parenthesis to the left and can be written completely without parenthesis. The bluebird (my favorite bird) solves this problem by allowing parenthesis to be introduced on the right.
+text = "	The rules of all the birds you know so far only contain parenthesis to the left and can be written completely without parenthesis. The bluebird solves this problem by allowing parenthesis to be introduced on the right.
 
 	Bluebird:
 [center](([b][color=green]B[/color][/b] [color=yellow]x[/color])  [color=orange]y[/color]) [color=orangered]z[/color] = [color=yellow]x[/color] ([color=orange]y[/color] [color=orangered]z[/color])     or     [b][color=green]B[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] [color=orangered]z[/color] = [color=yellow]x[/color] ([color=orange]y[/color] [color=orangered]z[/color])[/center]

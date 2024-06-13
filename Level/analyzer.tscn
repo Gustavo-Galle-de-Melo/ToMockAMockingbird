@@ -63,9 +63,9 @@ offset_bottom = 270.0
 theme_override_font_sizes/font_size = 30
 text = "Before:
 
-After:
+Rule:
 
-Rule:"
+After:"
 
 [node name="Before" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -82,7 +82,7 @@ theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
 text = "B C C x"
 
-[node name="After" type="RichTextLabel" parent="."]
+[node name="Rule" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 166.0
 offset_top = 124.0
@@ -95,14 +95,14 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "B C C"
+text = "A -> A x"
 
-[node name="Rule" type="RichTextLabel" parent="."]
+[node name="After" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 166.0
-offset_top = 214.0
+offset_top = 216.0
 offset_right = 536.0
-offset_bottom = 299.0
+offset_bottom = 301.0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
@@ -110,7 +110,7 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "A -> A x"
+text = "B C C"
 
 [connection signal="mouse_entered" from="ColorRect" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect" to="." method="_on_mouse_exited"]

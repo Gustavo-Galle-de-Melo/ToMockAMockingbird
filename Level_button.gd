@@ -11,7 +11,7 @@ func _ready() -> void:
 		$Name.text = "Sandbox"
 		$Star.visible = false
 		$Unbeaten.visible = false
-		$Button.disabled = false
+		$Button.disabled = Player_data.get_instance().section < Level_loader.get_level_section(number)
 	
 	else:
 		# normal level

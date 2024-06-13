@@ -180,4 +180,7 @@ static func get_level_name(level: int) -> String:
 
 
 static func get_level_section(level: int) -> int:
-	return levels[level - 1][0]
+	if level == 0:
+		return 2
+	else:
+		return levels[level - 1][0]

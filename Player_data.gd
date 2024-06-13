@@ -28,7 +28,7 @@ func _init() -> void:
 	level_beaten = []
 	level_beaten.resize(len(Level_loader.levels))
 	level_beaten.fill(false)
-	set_section(15)
+	set_section(1)
 
 
 func is_known(bird: Simple_bird) -> bool:
@@ -68,7 +68,7 @@ func set_level_beaten(level: int) -> void:
 
 
 func set_section(section: int) -> void:
-	self.section = section
+	self.section = max(self.section, section)
 	for s in section:
 		for bird in Level_loader.section_birds[s]:
 			set_known(bird)
