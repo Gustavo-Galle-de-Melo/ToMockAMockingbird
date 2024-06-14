@@ -3,7 +3,14 @@ extends Control
 static var mouse_position: Vector2 = Vector2(0, 0)
 var camera_movement_enabled: bool = false
 
+# TODO remove this
+@export var demo: bool = false
+
 func _ready() -> void:
+	# TODO remove this
+	if demo:
+		Player_data.get_instance().set_section(15)
+
 	# set camera position
 	$Mouse.position = mouse_position
 	$Mouse/Camera.drag_horizontal_enabled = false

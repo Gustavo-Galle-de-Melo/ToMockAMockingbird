@@ -1,0 +1,152 @@
+
+# sandbox
+	sandbox
+
+# tutorial
+# new: C, P, T
+	"Introduction to birds"
+	"How to play"
+	CT->P 2		# P = C T
+	CP->T 2		# T = C P
+
+# new: R
+	"Robin"
+	CPT->R 2	# R = C C
+	R->C 3		# C = R R R
+	PR->T 3		# T = R P R
+	RT->P 3		# P = R T R
+
+# new: A, K
+	"Albatross and Kestrel"
+	A->P 2		# P = A _
+	KP->A 2		# A = K P
+	AC->K 2		# K = C A
+	CK->A 2		# A = C K
+	CK->P 3		# P = C K _
+	KR->P 3		# P = R _ K
+
+# new: M, W
+	"Mockingbird and Warbler"
+	PW->M 2		# M = W P
+	TW->M 2		# M = W T
+	KW->P 2		# P = W K
+	KW->M 3		# M = W P {P = W K}
+	KW->A 3		# A = K P {P = W K}
+
+# new: B
+	"Bluebird"
+	BC->P 3		# P = B C C
+	BR->P 7		# P = B C C {C = R R R}
+	BKM->P 3	# P = B M K
+	BT->R 3		# R = B B T
+	BT->P 6		# P = B (T T) R {R = B B T}
+	BT->C 8		# C = B (T R) R {R = B B T}
+
+# new: Q
+	"Quail"
+	BC->Q 2		# Q = C B
+	CQ->B 2		# B = C Q
+	CQ->P 3		# P = Q C C
+	QT->C 4		# C = Q Q (Q T)
+	QT->B 4		# C = Q T (Q Q)
+
+# new: L
+	"Lark"
+	LP->M 2		# M = L P
+	QM->L 2		# L = Q M
+	BW->L 3		# L = B W B
+	BMR->L 3	# L = R M B
+	KLQ->P 4	# P = Q L (Q K)
+
+# new: J
+	"Jay"
+	J->M 2		# M = J _
+	KM->J 2		# J = K M
+	CJP->A 3	# A = C J P
+	CKL->J 3	# J = C (L K)
+
+# new: O
+	"Owl"
+	OP->M 2		# M = O P
+	QW->O 3		# O = Q Q W
+	BKO->T 3	# T = B O K
+	KOQ->T 3	# T = Q K O
+	KQW->T 5	# T = Q (Q K Q) W = Q K (Q Q W)
+
+# new: D
+	"Dove"
+	B->D 3		# D = B B B
+	DKO->T 5	# T = D O (K K) _
+	ADO->J 5	# J = D O P A {P = A _}
+	CD->P 5		# P = D C C R {R = C C}
+	CD->B 7		# B = C D P {P = D C C R, R = C C}
+
+# new: N
+	"Nightingale"
+	BW->N 2		# N = W B
+	QW->N 2		# N = W Q
+	CN->P 2		# P = N C
+	CN->T 3		# T = C P {P = N C}
+	BCN->W 6	# W = C (B N T) {T = C P, P = N C}
+	BNT->M 6	# M = B (T T) (B N T)
+	CN->W 7		# W = C (C (N T) N) {T = C P, P = N C}
+
+# new: S
+	"Starling"
+	SP->O 2		# O = S P
+	ST->W 2		# W = S T
+	PS->M 3		# M = O P {O = S P}
+	ST->M 3		# M = W T {W = S T}
+	BPS->N 3	# N = S B P
+	PQS->N 3	# N = S Q P
+	BJS->L 3	# L = S B J
+	BCW->S 6	# S = B (B W) (B B C)
+	DQW->S 6	# S = D W (Q Q (Q Q))
+	AS->W 3		# W = S S A
+	SR->W 5		# W = R (S R R) R
+
+# new: F
+	"Finch"
+	BC->F 4		# F = B C R {R = C C}
+	CD->F 4		# F = D C C C				# bad 15: # F = D (C D T) C P {T = C P, P = D C C R, R = C C}
+	DF->P 7		# P = D (F F F) (D D) F
+	DFJP->A 6	# A = D (F P P) P J
+	DFJ->A 12	# A = D (F P J) F J {P = D (F F F) (D D) F}
+	FPQ->T 8	# T = Q (Q F Q) (F P (Q Q))
+	CN->F 6		# F = C (N R) R {R = C C}	# 7: F = C (C (N T) C) {T = C P, P = N C}
+	
+# turing completeness section:
+	"All birds (TODO)"
+	KS->P 3		# P = A _ {A = S K}
+	KS->A 2		# A = S K
+	KS->O 4		# O = S P = {P = A K, A = S K}
+	KS->B 4		# B = S (K S) K
+	KS->W 4		# W = S S A {A = S K}
+	KS->T 7		# T = S (K O) K {O = S P, P = A _, A = S K}
+	KS->Q 8		# Q = S (K (S B)) K {B = S (K S) K}
+	KS->R 8		# R = S (K (S S)) (S (K K) K)
+	KS->C 10	# C = S (S (K S) (S (K K) S)) (K K)
+	KS->D 10	# D = S (K B) B {B = S (K S) K}
+	KS->F 17	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
+	
+	KS->L 10	# S (K W) B {W = S S A, A = S K, B = S (K S) K}		# 13: L = S B J {B = S (K S) K, J = K M, M = S P P, P = A _, A = S K}
+	KS->N 7		# N = S (S (K (S S)) K) K		# 8: N = S B P {B = S (K S) K, P = A _, A = S K}
+	KS->M 6		# M = S (S S) S A {A = S K}		# 7: S P P {P = A _, A = S K}
+	KS->J 7		# J = K M {M = S (S S) S A, A = S L} = S (S B K)	# 8: J = K M {M = O P, O = S P, P = A _, A = S K}
+	
+# hardest levels:
+	"Final challenges (TODO)"
+	BCM->W 5		# W = C (B M R) {R = C C}
+	KMQ->T 11		# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
+	FKQ->C 15		# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
+	BF->C 15		# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F	# 16: C = B (F (B (B B) F) F) (B (B B) (B F (B (B B) F)))
+	DT->R 21		# R = D (T (D (T T) (D (D (T T)) (D (T T) (D D))) T)) (D (T T) (D D)) T
+	ADFM->T 18		# T = D (F F (D M P)) (D (F A A) (D M (D F (D D)))) F {P = A _}
+	DFK->B 18		# B = D (F _ (K K)) (D (D (F _ _))) (D (D K) (D D (K D) _))
+	CJS->P 8		# P = C (S (C J C) C) R {R = C C}		# bad 8: P = S (S (C J C) C) (C J C) = S (C S) (C S C) (C J C)
+	CFKNOW->L 11	# L = C (C (C (N (W F)) (K O)) T) {T = C P, P = N C}
+	CFKNO->B 38		# B = C (C (N (T (C (N (C (C (T K) (C (C (N F) N) P)))) (T (C O (R (C (K (C O T)))))))) P) C) {T = C P, P = N C, R = C C}
+	
+	ADS->K 5		# K = S D (D A _)				# F10: K = D (F A P) (D D (S F)) A {P = A _}
+	FQ->P 10		# !!! P = Q (F (Q F)) (Q (Q F (Q Q Q)))		# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
+	"The end (TODO)"

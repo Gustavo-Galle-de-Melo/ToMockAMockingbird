@@ -39,12 +39,20 @@ static var levels_and_tutorials: Array = [
 	# A = K P
 	Level_data.new(3, "AC", "K", 2, ""),
 	# K = C A
+	Level_data.new(3, "AR", "K", 3, ""), # TODO bf
+	# K = R A R
 	Level_data.new(3, "CK", "A", 2, ""),
 	# A = C K
 	Level_data.new(3, "CK", "P", 3, ""),
 	# P = C K _
+	Level_data.new(3, "KR", "A", 3, ""), # TODO: bf
+	# A = R K R
+	Level_data.new(3, "AR", "T", 4, ""), # TODO bf
+	# T = R (A _) R
 	Level_data.new(3, "KR", "P", 3, ""),
 	# P = R _ K
+	Level_data.new(3, "KR", "T", 6, ""), # TODO bf
+	# T = R P R {P = R _ K}
 
 # new: M, W
 	Tutorial_data.new(4, "Mockingbird and Warbler", "res://Tutorials/tutorial_mockingbird_warbler.tscn"),
@@ -65,10 +73,16 @@ static var levels_and_tutorials: Array = [
 	# P = B C C
 	Level_data.new(5, "BR", "P", 7, ""),
 	# P = B C C {C = R R R}
+	Level_data.new(5, "BCW", "M", 4, ""), # TODO bf
+	# M = W P {P = B C C}
+	Level_data.new(5, "BRW", "M", 8, ""), # TODO bf
+	# M = W P {P = B C C, C = R R R}
 	Level_data.new(5, "BKM", "P", 3, ""),
 	# P = B M K
 	Level_data.new(5, "BT", "R", 3, ""),
 	# R = B B T
+	Level_data.new(5, "BKT", "P", 4, ""), # TODO bf
+	# P = B (T _) K
 	Level_data.new(5, "BT", "P", 6, ""),
 	# P = B (T T) R {R = B B T}
 	Level_data.new(5, "BT", "C", 8, ""),
@@ -80,12 +94,30 @@ static var levels_and_tutorials: Array = [
 	# Q = C B
 	Level_data.new(6, "CQ", "B", 2, ""),
 	# B = C Q
+	Level_data.new(6, "QR", "B", 3, ""), # TODO bf
+	# B = R Q R
+	Level_data.new(6, "BR", "Q", 3, ""), # TODO bf
+	# Q = R B R
 	Level_data.new(6, "CQ", "P", 3, ""),
 	# P = Q C C
+	Level_data.new(6, "QR", "P", 7, ""), # TODO bf
+	# P = Q C C {C = R R R}
+	Level_data.new(6, "QC", "T", 4, ""), # TODO bf
+	# T = C P {P = Q C C}
+	Level_data.new(6, "QR", "T", 9, ""), # TODO bf
+	# T = R P R {P = Q C C, C = R R R}
 	Level_data.new(6, "QT", "C", 4, ""),
 	# C = Q Q (Q T)
+	Level_data.new(6, "QT", "R", 7, ""), # TODO bf
+	# R = Q T (Q C) {C = Q Q (Q T)}
+	Level_data.new(6, "MQT", "R", 5, ""), # TODO bf
+	# R = M C {C = Q Q (Q T)}
+	Level_data.new(6, "QT", "P", 4, ""), # TODO bf
+	# P = Q T (Q T)
 	Level_data.new(6, "QT", "B", 4, ""),
 	# C = Q T (Q Q)
+	Level_data.new(6, "BT", "Q", 6, ""), # TODO bf
+	# Q = B (T B) R {R = B B T}
 
 # new: L
 	Tutorial_data.new(7, "Lark", "res://Tutorials/tutorial_lark.tscn"),
@@ -97,6 +129,10 @@ static var levels_and_tutorials: Array = [
 	# L = B W B
 	Level_data.new(7, "BMR", "L", 3, ""),
 	# L = R M B
+	Level_data.new(7, "BCM", "L", 3, ""), # TODO bf
+	# L = C B M
+	Level_data.new(7, "BTM", "L", 4, ""), # TODO bf
+	# L = B (T M) B
 	Level_data.new(7, "KLQ", "P", 4, ""),
 	# P = Q L (Q K)
 
@@ -108,8 +144,12 @@ static var levels_and_tutorials: Array = [
 	# J = K M
 	Level_data.new(8, "CJP", "A", 3, ""),
 	# A = C J P
+	Level_data.new(8, "JPR", "A", 3, ""), # TODO bf
+	# A = R P J
 	Level_data.new(8, "CKL", "J", 3, ""),
 	# J = C (L K)
+	Level_data.new(8, "KLR", "J", 4, ""), # TODO bf
+	# J = R (L K) R
 
 # new: O
 	Tutorial_data.new(9, "Owl", "res://Tutorials/tutorial_owl1.tscn"),
@@ -184,7 +224,7 @@ static var levels_and_tutorials: Array = [
 	Level_data.new(13, "BC", "F", 4, ""),
 	# F = B C R {R = C C}
 	Level_data.new(13, "CD", "F", 4, ""),
-	# F = D C C C				# bad 15: # F = D (C D T) C P {T = C P, P = D C C R, R = C C}
+	# F = D C C C
 	Level_data.new(13, "DF", "P", 7, ""),
 	# P = D (F F F) (D D) F
 	Level_data.new(13, "DFJP", "A", 6, ""),
@@ -247,7 +287,7 @@ static var levels_and_tutorials: Array = [
 	Level_data.new(15, "DFK", "B", 18, ""),
 	# B = D (F _ (K K)) (D (D (F _ _))) (D (D K) (D D (K D) _))
 	Level_data.new(15, "CJS", "P", 8, ""),
-	# P = C (S (C J C) C) R {R = C C}		# bad 8: P = S (S (C J C) C) (C J C) = S (C S) (C S C) (C J C)
+	# P = C (S (C J C) C) R {R = C C}
 	Level_data.new(15, "CFKNOW", "L", 11, ""),
 	# L = C (C (C (N (W F)) (K O)) T) {T = C P, P = N C}
 	Level_data.new(15, "CFKNO", "B", 38, ""),
@@ -259,6 +299,11 @@ static var levels_and_tutorials: Array = [
 	# !!! P = Q (F (Q F)) (Q (Q F (Q Q Q)))		# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
 	Tutorial_data.new(15, "The end (TODO)", "res://Tutorials/tutorial_starling.tscn"),
 ]
+
+# VS Code regex to generate the solution list:
+# ^(#.*)|^(\t)L.*"(\w+)".*"(\w+)",( \d+).*\n\t(#.*)|^(\t)T.*?( ".*?").*
+# $2$3$7->$1$4$5$2$2$6$8
+
 
 # 1-indexed
 static var section_birds: Array[String] = [
