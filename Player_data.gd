@@ -22,11 +22,12 @@ static func get_instance() -> Player_data:
 func _init() -> void:
 	for bird in Bird_list.all_birds:
 		known_birds[bird.symbol] = false
+	Level_loader.number_levels()
 	level_stars = []
-	level_stars.resize(len(Level_loader.levels))
+	level_stars.resize(len(Level_loader.numbered_levels))
 	level_stars.fill(false)
 	level_beaten = []
-	level_beaten.resize(len(Level_loader.levels))
+	level_beaten.resize(len(Level_loader.numbered_levels))
 	level_beaten.fill(false)
 	set_section(1)
 

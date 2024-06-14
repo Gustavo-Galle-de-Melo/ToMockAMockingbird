@@ -23,12 +23,14 @@ color = Color(0.447059, 0.552941, 0.317647, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 250.0
+offset_left = 25.0
+offset_right = 225.0
 offset_bottom = 250.0
 theme_override_font_sizes/font_size = 30
 text = "Tutorial"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="Button" type="TextureButton" parent="."]
 layout_mode = 0

@@ -1,11 +1,15 @@
+class_name Tutorial_button
 extends Control
 
-@export_multiline var title: String
-@export var tutorial: PackedScene
-@export var section: int
+var title: String
+var tutorial: PackedScene
+var section: int
 
 
-func _ready() -> void:
+func set_tutorial(data: Tutorial_data) -> void:
+	title = data.title
+	tutorial = load(data.scene)
+	section = data.section
 	$Label.text = title
 	if Player_data.get_instance().section < section:
 		$Button.disabled = true

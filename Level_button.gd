@@ -1,10 +1,11 @@
 class_name Level_button
 extends Control
 
-@export var number: int
+var number: int
 
 
-func _ready() -> void:
+func set_number(number) -> void:
+	self.number = number
 	if number == 0:
 		# sandbox
 		$Number.text = "0"
