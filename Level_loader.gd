@@ -39,19 +39,19 @@ static var levels_and_tutorials: Array = [
 	# A = K P
 	Level_data.new(3, "AC", "K", 2, ""),
 	# K = C A
-	Level_data.new(3, "AR", "K", 3, ""), # TODO bf
+	Level_data.new(3, "AR", "K", 3, ""),
 	# K = R A R
 	Level_data.new(3, "CK", "A", 2, ""),
 	# A = C K
 	Level_data.new(3, "CK", "P", 3, ""),
 	# P = C K _
-	Level_data.new(3, "KR", "A", 3, ""), # TODO: bf
+	Level_data.new(3, "KR", "A", 3, ""),
 	# A = R K R
-	Level_data.new(3, "AR", "T", 4, ""), # TODO bf
+	Level_data.new(3, "AR", "T", 4, ""),
 	# T = R (A _) R
 	Level_data.new(3, "KR", "P", 3, ""),
 	# P = R _ K
-	Level_data.new(3, "KR", "T", 6, ""), # TODO bf
+	Level_data.new(3, "KR", "T", 5, ""),
 	# T = R P R {P = R _ K}
 
 # new: M, W
@@ -73,15 +73,15 @@ static var levels_and_tutorials: Array = [
 	# P = B C C
 	Level_data.new(5, "BR", "P", 7, ""),
 	# P = B C C {C = R R R}
-	Level_data.new(5, "BCW", "M", 4, ""), # TODO bf
+	Level_data.new(5, "BCW", "M", 4, ""),
 	# M = W P {P = B C C}
-	Level_data.new(5, "BRW", "M", 8, ""), # TODO bf
-	# M = W P {P = B C C, C = R R R}
+	Level_data.new(5, "BRW", "M", 5, ""),
+	# M = R (B W R) R
 	Level_data.new(5, "BKM", "P", 3, ""),
 	# P = B M K
 	Level_data.new(5, "BT", "R", 3, ""),
 	# R = B B T
-	Level_data.new(5, "BKT", "P", 4, ""), # TODO bf
+	Level_data.new(5, "BKT", "P", 4, ""),
 	# P = B (T _) K
 	Level_data.new(5, "BT", "P", 6, ""),
 	# P = B (T T) R {R = B B T}
@@ -94,29 +94,29 @@ static var levels_and_tutorials: Array = [
 	# Q = C B
 	Level_data.new(6, "CQ", "B", 2, ""),
 	# B = C Q
-	Level_data.new(6, "QR", "B", 3, ""), # TODO bf
+	Level_data.new(6, "QR", "B", 3, ""),
 	# B = R Q R
-	Level_data.new(6, "BR", "Q", 3, ""), # TODO bf
+	Level_data.new(6, "BR", "Q", 3, ""),
 	# Q = R B R
 	Level_data.new(6, "CQ", "P", 3, ""),
 	# P = Q C C
-	Level_data.new(6, "QR", "P", 7, ""), # TODO bf
+	Level_data.new(6, "QR", "P", 7, ""),
 	# P = Q C C {C = R R R}
-	Level_data.new(6, "QC", "T", 4, ""), # TODO bf
+	Level_data.new(6, "QC", "T", 4, ""),
 	# T = C P {P = Q C C}
-	Level_data.new(6, "QR", "T", 9, ""), # TODO bf
-	# T = R P R {P = Q C C, C = R R R}
+	Level_data.new(6, "QR", "T", 6, ""),
+	# T = Q R (Q C) {C = R R R}
 	Level_data.new(6, "QT", "C", 4, ""),
 	# C = Q Q (Q T)
-	Level_data.new(6, "QT", "R", 7, ""), # TODO bf
-	# R = Q T (Q C) {C = Q Q (Q T)}
-	Level_data.new(6, "MQT", "R", 5, ""), # TODO bf
+	Level_data.new(6, "MQT", "R", 5, ""),
 	# R = M C {C = Q Q (Q T)}
-	Level_data.new(6, "QT", "P", 4, ""), # TODO bf
+	Level_data.new(6, "QT", "P", 4, ""),
 	# P = Q T (Q T)
 	Level_data.new(6, "QT", "B", 4, ""),
 	# C = Q T (Q Q)
-	Level_data.new(6, "BT", "Q", 6, ""), # TODO bf
+	Level_data.new(6, "QT", "R", 6, ""),
+	# R = Q (Q T T) (Q Q) = Q T B {B = Q T (Q Q)}
+	Level_data.new(6, "BT", "Q", 6, ""),
 	# Q = B (T B) R {R = B B T}
 
 # new: L
@@ -129,9 +129,9 @@ static var levels_and_tutorials: Array = [
 	# L = B W B
 	Level_data.new(7, "BMR", "L", 3, ""),
 	# L = R M B
-	Level_data.new(7, "BCM", "L", 3, ""), # TODO bf
+	Level_data.new(7, "BCM", "L", 3, ""),
 	# L = C B M
-	Level_data.new(7, "BTM", "L", 4, ""), # TODO bf
+	Level_data.new(7, "BMT", "L", 4, ""),
 	# L = B (T M) B
 	Level_data.new(7, "KLQ", "P", 4, ""),
 	# P = Q L (Q K)
@@ -144,11 +144,11 @@ static var levels_and_tutorials: Array = [
 	# J = K M
 	Level_data.new(8, "CJP", "A", 3, ""),
 	# A = C J P
-	Level_data.new(8, "JPR", "A", 3, ""), # TODO bf
+	Level_data.new(8, "JPR", "A", 3, ""),
 	# A = R P J
 	Level_data.new(8, "CKL", "J", 3, ""),
 	# J = C (L K)
-	Level_data.new(8, "KLR", "J", 4, ""), # TODO bf
+	Level_data.new(8, "KLR", "J", 4, ""),
 	# J = R (L K) R
 
 # new: O
@@ -196,7 +196,7 @@ static var levels_and_tutorials: Array = [
 
 # new: S
 	Tutorial_data.new(12, "Starling", "res://Tutorials/tutorial_starling.tscn"),
-	Level_data.new(12, "SP", "O", 2, ""),
+	Level_data.new(12, "PS", "O", 2, ""),
 	# O = S P
 	Level_data.new(12, "ST", "W", 2, ""),
 	# W = S T
@@ -231,10 +231,10 @@ static var levels_and_tutorials: Array = [
 	# A = D (F P P) P J
 	Level_data.new(13, "DFJ", "A", 12, ""),
 	# A = D (F P J) F J {P = D (F F F) (D D) F}
+	Level_data.new(13, "CN", "F", 6, ""),
+	# F = C (N R) R {R = C C}
 	Level_data.new(13, "FPQ", "T", 8, ""),
 	# T = Q (Q F Q) (F P (Q Q))
-	Level_data.new(13, "CN", "F", 6, ""),
-	# F = C (N R) R {R = C C}	# 7: F = C (C (N T) C) {T = C P, P = N C}
 	
 # turing completeness section:
 	Tutorial_data.new(14, "All birds (TODO)", "res://Tutorials/tutorial_starling.tscn"),
@@ -244,6 +244,10 @@ static var levels_and_tutorials: Array = [
 	# A = S K
 	Level_data.new(14, "KS", "O", 4, ""),
 	# O = S P = {P = A K, A = S K}
+	Level_data.new(14, "KS", "M", 7, ""),
+	# 7: S P P {P = A _, A = S K}
+	Level_data.new(14, "KS", "J", 8, ""),
+	# 8: J = K M {M = O P, O = S P, P = A _, A = S K}
 	Level_data.new(14, "KS", "B", 4, ""),
 	# B = S (K S) K
 	Level_data.new(14, "KS", "W", 4, ""),
@@ -254,21 +258,16 @@ static var levels_and_tutorials: Array = [
 	# Q = S (K (S B)) K {B = S (K S) K}
 	Level_data.new(14, "KS", "R", 8, ""),
 	# R = S (K (S S)) (S (K K) K)
+	Level_data.new(14, "KS", "N", 8, ""),
+	# 8: N = S B P {B = S (K S) K, P = A _, A = S K}
 	Level_data.new(14, "KS", "C", 10, ""),
 	# C = S (S (K S) (S (K K) S)) (K K)
 	Level_data.new(14, "KS", "D", 10, ""),
 	# D = S (K B) B {B = S (K S) K}
+	Level_data.new(14, "KS", "L", 10, ""),
+	# L = S (K W) B {W = S S A, A = S K, B = S (K S) K}
 	Level_data.new(14, "KS", "F", 17, ""),
 	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
-	
-	Level_data.new(14, "KS", "L", 10, ""),
-	# S (K W) B {W = S S A, A = S K, B = S (K S) K}		# 13: L = S B J {B = S (K S) K, J = K M, M = S P P, P = A _, A = S K}
-	Level_data.new(14, "KS", "N", 7, ""),
-	# N = S (S (K (S S)) K) K		# 8: N = S B P {B = S (K S) K, P = A _, A = S K}
-	Level_data.new(14, "KS", "M", 6, ""),
-	# M = S (S S) S A {A = S K}		# 7: S P P {P = A _, A = S K}
-	Level_data.new(14, "KS", "J", 7, ""),
-	# J = K M {M = S (S S) S A, A = S L} = S (S B K)	# 8: J = K M {M = O P, O = S P, P = A _, A = S K}
 	
 # hardest levels:
 	Tutorial_data.new(15, "Final challenges (TODO)", "res://Tutorials/tutorial_starling.tscn"),
@@ -276,10 +275,12 @@ static var levels_and_tutorials: Array = [
 	# W = C (B M R) {R = C C}
 	Level_data.new(15, "KMQ", "T", 11, ""),
 	# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
+	Level_data.new(15, "FQ", "P", 11, ""),
+	# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
 	Level_data.new(15, "FKQ", "C", 15, ""),
 	# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
 	Level_data.new(15, "BF", "C", 15, ""),
-	# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F	# 16: C = B (F (B (B B) F) F) (B (B B) (B F (B (B B) F)))
+	# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F
 	Level_data.new(15, "DT", "R", 21, ""),
 	# R = D (T (D (T T) (D (D (T T)) (D (T T) (D D))) T)) (D (T T) (D D)) T
 	Level_data.new(15, "ADFM", "T", 18, ""),
@@ -288,16 +289,30 @@ static var levels_and_tutorials: Array = [
 	# B = D (F _ (K K)) (D (D (F _ _))) (D (D K) (D D (K D) _))
 	Level_data.new(15, "CJS", "P", 8, ""),
 	# P = C (S (C J C) C) R {R = C C}
+	Level_data.new(15, "ADFS", "K", 10, ""),
+	# K = D (F A P) (D D (S F)) A {P = A _}
+	Level_data.new(15, "ADS", "K", 5, ""),
+	# K = S D (D A _)
 	Level_data.new(15, "CFKNOW", "L", 11, ""),
 	# L = C (C (C (N (W F)) (K O)) T) {T = C P, P = N C}
 	Level_data.new(15, "CFKNO", "B", 38, ""),
 	# B = C (C (N (T (C (N (C (C (T K) (C (C (N F) N) P)))) (T (C O (R (C (K (C O T)))))))) P) C) {T = C P, P = N C, R = C C}
 	
-	Level_data.new(15, "ADS", "K", 5, ""),
-	# K = S D (D A _)				# F10: K = D (F A P) (D D (S F)) A {P = A _}
+# 'impossible' levels:
+	Tutorial_data.new(14, "Optimization (TODO)", "res://Tutorials/tutorial_starling.tscn"),
+	Level_data.new(15, "DT", "R", 15, ""),
+	# R = D (T (D T)) (D D (D (D (T T) (T T)))) (D D T)
+	Level_data.new(14, "KS", "N", 7, ""),
+	# N = S (S (K (S S)) K) K
+	Level_data.new(14, "KS", "M", 6, ""),
+	# M = S (S S) S A {A = S K}
+	Level_data.new(14, "KS", "J", 7, ""),
+	# J = K M {M = S (S S) S A, A = S K} = S (S B K) {B = S (K S) K}
 	Level_data.new(15, "FQ", "P", 10, ""),
-	# !!! P = Q (F (Q F)) (Q (Q F (Q Q Q)))		# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
-	Tutorial_data.new(15, "The end (TODO)", "res://Tutorials/tutorial_starling.tscn"),
+	# P = Q (F (Q F)) (Q (Q F (Q Q Q)))
+	
+	# maybe
+	#Tutorial_data.new(15, "The end (TODO)", "res://Tutorials/tutorial_starling.tscn"),
 ]
 
 # VS Code regex to generate the solution list:
