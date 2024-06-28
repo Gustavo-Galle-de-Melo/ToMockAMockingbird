@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://p4ysyjb3a6n3"]
+[gd_scene load_steps=6 format=3 uid="uid://b23vj6goswlf7"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_byeje"]
 [ext_resource type="Texture2D" uid="uid://cops7pr6ekpxr" path="res://assets/settings.png" id="2_lfjkg"]
+[ext_resource type="Texture2D" uid="uid://3q45vkfgolth" path="res://assets/cloud0.png" id="2_ql2rf"]
+[ext_resource type="Texture2D" uid="uid://cl6cmf7xfd8l4" path="res://assets/cloud1.png" id="2_w3mbw"]
 [ext_resource type="PackedScene" uid="uid://d2llwx2eh21li" path="res://settings_menu.tscn" id="3_7681u"]
 
 [node name="Menu" type="Control"]
@@ -12,6 +14,77 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_byeje")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ColorRect" parent="ParallaxBackground"]
+offset_right = 1920.0
+offset_bottom = 1017.0
+color = Color(0.439216, 0.698039, 0.909804, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.713726)
+offset_top = -40.0
+offset_right = 3840.0
+offset_bottom = 1040.0
+texture = ExtResource("2_ql2rf")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.713726)
+offset_left = 3649.0
+offset_top = -40.0
+offset_right = 7489.0
+offset_bottom = 1040.0
+texture = ExtResource("2_ql2rf")
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 1, 1, 0.713726)
+offset_left = 7302.0
+offset_top = -40.0
+offset_right = 11142.0
+offset_bottom = 1040.0
+texture = ExtResource("2_ql2rf")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = -56.0
+offset_top = -40.0
+offset_right = 3784.0
+offset_bottom = 1040.0
+texture = ExtResource("2_w3mbw")
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 3588.0
+offset_top = -40.0
+offset_right = 7428.0
+offset_bottom = 1040.0
+texture = ExtResource("2_w3mbw")
+
+[node name="TextureRect3" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 7302.0
+offset_top = -40.0
+offset_right = 11142.0
+offset_bottom = 1040.0
+texture = ExtResource("2_w3mbw")
+
+[node name="TextureRect4" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 10933.0
+offset_top = -40.0
+offset_right = 14773.0
+offset_bottom = 1040.0
+texture = ExtResource("2_w3mbw")
+
+[node name="TextureRect5" type="TextureRect" parent="ParallaxBackground/ParallaxLayer2"]
+offset_left = 14510.0
+offset_top = -40.0
+offset_right = 18350.0
+offset_bottom = 1040.0
+texture = ExtResource("2_w3mbw")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

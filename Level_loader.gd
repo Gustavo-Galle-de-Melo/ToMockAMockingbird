@@ -281,8 +281,8 @@ static var levels_and_tutorials: Array = [
 	# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
 	Level_data.new(15, "BF", "C", 15, ""),
 	# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F
-	Level_data.new(15, "DT", "R", 21, ""),
-	# R = D (T (D (T T) (D (D (T T)) (D (T T) (D D))) T)) (D (T T) (D D)) T
+	Level_data.new(15, "DT", "R", 17, ""),
+	# R = D (D (T T) (T T)) (D D (D (T T) (D (T T)) (D D T)))
 	Level_data.new(15, "ADFM", "T", 18, ""),
 	# T = D (F F (D M P)) (D (F A A) (D M (D F (D D)))) F {P = A _}
 	Level_data.new(15, "DFK", "B", 18, ""),

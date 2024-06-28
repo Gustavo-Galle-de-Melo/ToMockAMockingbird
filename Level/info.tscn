@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://2lf0g2no4dbp"]
 
 [ext_resource type="Script" path="res://Level/Info.gd" id="1_x0fwr"]
-[ext_resource type="Texture2D" uid="uid://055qyni1yr71" path="res://assets/Null.png" id="2_o2fdg"]
+[ext_resource type="Texture2D" uid="uid://c7pguamcpyboa" path="res://assets/Null.png" id="2_o2fdg"]
 
 [node name="Info" type="Control"]
 layout_mode = 3
@@ -15,7 +15,8 @@ grow_vertical = 2
 script = ExtResource("1_x0fwr")
 
 [node name="Image" type="Sprite2D" parent="."]
-position = Vector2(152.5, 121)
+position = Vector2(126, 121)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_o2fdg")
 
 [node name="Text" type="RichTextLabel" parent="."]

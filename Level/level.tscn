@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgorna674yjsn"]
+[gd_scene load_steps=9 format=3 uid="uid://cgorna674yjsn"]
 
 [ext_resource type="Script" path="res://Level/Level.gd" id="1_epjow"]
+[ext_resource type="Texture2D" uid="uid://dk03a6brvjeve" path="res://assets/branch.png" id="2_2d7vl"]
 [ext_resource type="PackedScene" uid="uid://bkm4mr6ysiayc" path="res://Level/analyzer.tscn" id="2_5ky0k"]
 [ext_resource type="PackedScene" uid="uid://164nkmlea44s" path="res://Level/goal.tscn" id="3_265ib"]
+[ext_resource type="Texture2D" uid="uid://bmsb45oxo81u7" path="res://assets/nest.png" id="3_vax1h"]
 [ext_resource type="PackedScene" uid="uid://2lf0g2no4dbp" path="res://Level/info.tscn" id="4_3le2t"]
 [ext_resource type="PackedScene" uid="uid://cr0tal12xa4ah" path="res://Level/available_birds.tscn" id="5_dp82h"]
 [ext_resource type="Texture2D" uid="uid://qiwhkfnnumm1" path="res://assets/done.png" id="6_s2mqa"]
@@ -11,11 +13,29 @@
 script = ExtResource("1_epjow")
 
 [node name="Background" type="ColorRect" parent="."]
-visible = false
 offset_top = 50.0
 offset_right = 1520.0
 offset_bottom = 1017.0
-color = Color(1, 1, 1, 0)
+mouse_filter = 2
+color = Color(0.439216, 0.698039, 0.909804, 1)
+
+[node name="Branch" type="TextureRect" parent="."]
+offset_top = 175.0
+offset_right = 1520.0
+offset_bottom = 1249.0
+texture = ExtResource("2_2d7vl")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Nest" type="TextureRect" parent="."]
+offset_left = -109.0
+offset_top = 130.0
+offset_right = 1660.0
+offset_bottom = 1078.0
+mouse_filter = 2
+texture = ExtResource("3_vax1h")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Goal" parent="." instance=ExtResource("3_265ib")]
 offset_top = 46.0
@@ -92,10 +112,10 @@ stretch_mode = 5
 
 [node name="Analyze" type="Button" parent="."]
 visible = false
-offset_left = 1074.0
-offset_top = 70.0
-offset_right = 1209.0
-offset_bottom = 136.0
+offset_left = 1360.0
+offset_top = 390.0
+offset_right = 1495.0
+offset_bottom = 456.0
 focus_mode = 0
 theme_override_font_sizes/font_size = 30
 text = " Analyze "

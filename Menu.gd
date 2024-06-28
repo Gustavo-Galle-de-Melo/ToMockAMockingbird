@@ -34,6 +34,7 @@ func _ready() -> void:
 			button = preload("res://Tutorials/tutorial_button.tscn").instantiate()
 			button.set_tutorial(level_or_tutorial)
 		button.position = center + Vector2(300 * (i - 2) - 125, - 150 * sin((i - 2) * PI / 4) - 125)
+		$Mouse/Camera.limit_right = button.position.x + center.x + 125
 		add_child(button)
 
 

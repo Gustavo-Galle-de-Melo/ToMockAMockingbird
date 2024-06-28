@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkm4mr6ysiayc"]
 
 [ext_resource type="Script" path="res://Level/Analyzer.gd" id="1_fksrv"]
-[ext_resource type="Texture2D" uid="uid://bk52iud050cwg" path="res://assets/previous.png" id="2_4sxy4"]
-[ext_resource type="Texture2D" uid="uid://c6piuvwdvls5s" path="res://assets/pressed.png" id="3_6bfos"]
-[ext_resource type="Texture2D" uid="uid://dk4b4s0fwh6uh" path="res://assets/next.png" id="4_rl4cg"]
-[ext_resource type="Texture2D" uid="uid://b6845dx0n1khe" path="res://assets/skip.png" id="5_yvrut"]
+[ext_resource type="Texture2D" uid="uid://dlr1d2whrey36" path="res://assets/previous.png" id="2_4sxy4"]
+[ext_resource type="Texture2D" uid="uid://kwllj1jcusc0" path="res://assets/pressedPrevious.png" id="3_vpyao"]
+[ext_resource type="Texture2D" uid="uid://d1fxbopad16ie" path="res://assets/next.png" id="4_rl4cg"]
+[ext_resource type="Texture2D" uid="uid://csp25u5f2qsrf" path="res://assets/pressedNext.png" id="5_2ut0o"]
 
 [node name="Analyzer" type="Control"]
 layout_mode = 3
@@ -31,28 +31,21 @@ offset_right = 133.0
 offset_bottom = 399.0
 mouse_filter = 1
 texture_normal = ExtResource("2_4sxy4")
-texture_pressed = ExtResource("3_6bfos")
+texture_pressed = ExtResource("3_vpyao")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Next" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 224.0
+offset_left = 424.0
 offset_top = 299.0
-offset_right = 324.0
+offset_right = 524.0
 offset_bottom = 399.0
 mouse_filter = 1
 texture_normal = ExtResource("4_rl4cg")
-texture_pressed = ExtResource("3_6bfos")
-
-[node name="Skip" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 414.0
-offset_top = 299.0
-offset_right = 514.0
-offset_bottom = 399.0
-mouse_filter = 1
-texture_normal = ExtResource("5_yvrut")
-texture_pressed = ExtResource("3_6bfos")
+texture_pressed = ExtResource("5_2ut0o")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -116,4 +109,3 @@ text = "B C C"
 [connection signal="mouse_exited" from="ColorRect" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Skip" to="." method="_on_skip_pressed"]

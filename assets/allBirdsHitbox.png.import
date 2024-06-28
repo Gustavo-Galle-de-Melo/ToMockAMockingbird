@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kbmp1nfns2ir"
-path="res://.godot/imported/unbeaten.png-d89a7c7f3fe3ba0173f1b0433b03ad44.ctex"
+uid="uid://bndfv6hfm0mhc"
+path="res://.godot/imported/allBirdsHitbox.png-2619bf981196300f41aa4530cfab229c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/unbeaten.png"
-dest_files=["res://.godot/imported/unbeaten.png-d89a7c7f3fe3ba0173f1b0433b03ad44.ctex"]
+source_file="res://assets/allBirdsHitbox.png"
+dest_files=["res://.godot/imported/allBirdsHitbox.png-2619bf981196300f41aa4530cfab229c.ctex"]
 
 [params]
 

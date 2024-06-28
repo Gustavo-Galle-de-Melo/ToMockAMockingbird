@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bag07vjcfvakk"]
+[gd_scene load_steps=3 format=3 uid="uid://bag07vjcfvakk"]
 
 [ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_bgoyt"]
+[ext_resource type="Texture2D" uid="uid://djg1ncl6sm1lp" path="res://assets/livro.png" id="2_nyh0b"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -12,10 +13,26 @@ grow_vertical = 2
 script = ExtResource("1_bgoyt")
 next = "res://Tutorials/introduction2.tscn"
 
-[node name="Title" type="Label" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
+offset_bottom = 1017.0
+color = Color(0.439216, 0.698039, 0.909804, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1017.0
+texture = ExtResource("2_nyh0b")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
 offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Introduction to birds"
 horizontal_alignment = 1
@@ -23,10 +40,11 @@ vertical_alignment = 1
 
 [node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 124.0
+offset_left = 104.0
 offset_top = 180.0
-offset_right = 1828.0
-offset_bottom = 878.0
+offset_right = 932.0
+offset_bottom = 1398.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/italics_font_size = 30

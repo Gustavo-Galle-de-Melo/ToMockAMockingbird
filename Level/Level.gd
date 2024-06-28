@@ -256,6 +256,7 @@ func _on_clear_pressed() -> void:
 	for bird in all_birds:
 		bird.queue_free()
 	all_birds = []
+	select_bird(null, 0)
 
 
 func _on_reset_pressed() -> void:

@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://wi7f7gpq6uvd"]
 
 [ext_resource type="Script" path="res://Birds/Bird_instance.gd" id="1_bsvv8"]
-[ext_resource type="Texture2D" uid="uid://055qyni1yr71" path="res://assets/Null.png" id="1_qto5h"]
+[ext_resource type="Texture2D" uid="uid://bt57hmw2q0c1w" path="res://assets/allBirdsHitbox2.png" id="2_edfov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq08t"]
-size = Vector2(260, 196.667)
+size = Vector2(200, 268.333)
 
 [node name="Bird_instance" type="Node2D"]
 script = ExtResource("1_bsvv8")
 
 [node name="Image" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_qto5h")
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_edfov")
 
 [node name="Symbol" type="RichTextLabel" parent="."]
 offset_left = -135.0
@@ -31,9 +31,18 @@ fit_content = true
 [node name="Hitbox" type="Area2D" parent="."]
 
 [node name="Rectangle" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 7.15256e-07)
+position = Vector2(5, -40.5)
 scale = Vector2(0.6, 0.6)
 shape = SubResource("RectangleShape2D_jq08t")
+
+[node name="ColorRect" type="ColorRect" parent="Hitbox/Rectangle"]
+visible = false
+offset_left = -100.0
+offset_top = -134.0
+offset_right = 100.0
+offset_bottom = 134.0
+mouse_filter = 2
+color = Color(0.890196, 0, 0.117647, 0.45098)
 
 [connection signal="mouse_entered" from="Hitbox" to="." method="_on_mouse_entered_hitbox"]
 [connection signal="mouse_exited" from="Hitbox" to="." method="_on_mouse_exited_hitbox"]

@@ -142,14 +142,6 @@ func _on_next_pressed() -> void:
 		return
 
 
-func _on_skip_pressed() -> void:
-	for i in 1000:
-		waiting = true
-		_on_next_pressed()
-		if halted:
-			break
-
-
 func wait() -> void:
 	$Before.text = current_bird.string(true)
 	$After.text = ""

@@ -11,7 +11,6 @@ func set_number(number) -> void:
 		$Number.text = "0"
 		$Name.text = "Sandbox"
 		$Star.visible = false
-		$Unbeaten.visible = false
 		$Button.disabled = Player_data.get_instance().section < Level_loader.get_level_section(number)
 	
 	else:
@@ -21,13 +20,13 @@ func set_number(number) -> void:
 		var star_size: String = str(Level_loader.get_level_star_size(number))
 		if Player_data.get_instance().has_beaten_level(number):
 			$Star.tooltip_text = "Beat this level with " + star_size + " birds or less"
+			if Player_data.get_instance().has_star(number):
+				$Star.texture = preload("res://assets/fullStar.png")
+			else:
+				$Star.texture = preload("res://assets/emptyStar.png")
 		else:
-			$Star.tooltip_text = "Beat this level with ? birds or less"
-		if Player_data.get_instance().has_star(number):
-			$Star.texture = preload("res://assets/fullStar.png")
-		else:
-			$Star.texture = preload("res://assets/emptyStar.png")
-		$Unbeaten.visible = not Player_data.get_instance().has_beaten_level(number)
+			$Star.visible = false
+			$Background.texture = preload("res://assets/levelUnbeaten.png")
 		$Button.disabled = Player_data.get_instance().section < Level_loader.get_level_section(number)
 
 
