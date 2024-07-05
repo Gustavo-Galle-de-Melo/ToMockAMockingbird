@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d101t6fuo72vv"]
+[gd_scene load_steps=4 format=3 uid="uid://d101t6fuo72vv"]
 
 [ext_resource type="PackedScene" uid="uid://wi7f7gpq6uvd" path="res://Birds/bird_instance.tscn" id="1_t14fw"]
 [ext_resource type="Script" path="res://Level/Bird_button.gd" id="1_vijv6"]
+[ext_resource type="Texture2D" uid="uid://cvst8eakf76ao" path="res://assets/branch2.png" id="2_ufw54"]
 
 [node name="Bird_button" type="Control"]
 custom_minimum_size = Vector2(200, 200)
@@ -23,6 +24,16 @@ offset_right = 200.0
 offset_bottom = 200.0
 mouse_filter = 2
 color = Color(1, 0.627451, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 9.0
+offset_right = 227.0
+offset_bottom = 219.0
+texture = ExtResource("2_ufw54")
+expand_mode = 1
+flip_h = true
 
 [node name="Bird_instance" parent="." instance=ExtResource("1_t14fw")]
 position = Vector2(99, 102)

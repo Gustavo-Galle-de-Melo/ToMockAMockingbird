@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://53dpp41rdg22"
-path="res://.godot/imported/Owl.png-a0f69b38dfdda46b2504e577328ccd0e.ctex"
+uid="uid://bxsec0akscmin"
+path="res://.godot/imported/A.png-a53c52e45026f6fee54c50ac98728f9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Owl.png"
-dest_files=["res://.godot/imported/Owl.png-a0f69b38dfdda46b2504e577328ccd0e.ctex"]
+source_file="res://assets/A.png"
+dest_files=["res://.godot/imported/A.png-a53c52e45026f6fee54c50ac98728f9a.ctex"]
 
 [params]
 

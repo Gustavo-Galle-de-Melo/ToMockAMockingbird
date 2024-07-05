@@ -31,6 +31,7 @@ func setup_sandbox() -> void:
 	$Goal.visible = false
 	$Options/V_Center/Star.visible = false
 	$Options/Done.visible = false
+	$Hint.visible = false
 	
 	for i in len(level_birds):
 		var bird: Simple_bird = level_birds[i]
@@ -48,6 +49,8 @@ func setup_level() -> void:
 	
 	set_star_text()
 	
+	$HintText/Text.text = Level_loader.get_level_hint(level)
+	
 	for i in len(level_birds):
 		var bird: Simple_bird = level_birds[i]
 		var bird_instance: Bird_instance = Bird_list.get_bird_instance(bird)
@@ -56,6 +59,9 @@ func setup_level() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if $HintText.visible and event.is_action('exit_interface') and event.pressed:
+		$HintText.visible = false
+	
 	if $Analyzer.visible and not $Analyzer.is_mouse_over and \
 			event.is_action("exit_interface") and event.pressed:
 		# if the player clicks off the analyzer, hide it
@@ -261,3 +267,7 @@ func _on_clear_pressed() -> void:
 
 func _on_reset_pressed() -> void:
 	get_tree().change_scene_to_file("res://Level/level.tscn")
+
+
+func _on_hint_pressed() -> void:
+	$HintText.visible = true

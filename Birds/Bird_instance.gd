@@ -20,7 +20,7 @@ func update_text() -> void:
 	else:
 		$Symbol.text = "[center][hint=%s]" % full_bird.string(false) + bird.string(true) + "[/hint][/center]"
 	if is_goal:
-		$Symbol.text = "[rainbow freq=0.1]" + $Symbol.text + "[/rainbow]"
+		$Symbol.text = "[wave freq=5 amp=30][color=#ffff55]" + $Symbol.text + "[/color][/wave]"
 
 
 func set_params(image: Texture, bird: Bird, full_bird: Bird) -> void:

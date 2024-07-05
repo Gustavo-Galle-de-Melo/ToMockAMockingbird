@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bag07vjcfvakk"]
+[gd_scene load_steps=7 format=3 uid="uid://bag07vjcfvakk"]
 
 [ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_bgoyt"]
 [ext_resource type="Texture2D" uid="uid://djg1ncl6sm1lp" path="res://assets/livro.png" id="2_nyh0b"]
+[ext_resource type="Texture2D" uid="uid://qi53yywqhnli" path="res://assets/tutorialAB.png" id="3_dswtb"]
+[ext_resource type="Texture2D" uid="uid://vq7v4b868j7t" path="res://assets/tutorialBA.png" id="4_7p6gb"]
+[ext_resource type="Texture2D" uid="uid://d1fxbopad16ie" path="res://assets/next.png" id="5_qstjn"]
+[ext_resource type="Texture2D" uid="uid://csp25u5f2qsrf" path="res://assets/pressedNext.png" id="6_qt2l5"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -43,7 +47,7 @@ layout_mode = 0
 offset_left = 104.0
 offset_top = 180.0
 offset_right = 932.0
-offset_bottom = 1398.0
+offset_bottom = 599.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
@@ -51,7 +55,43 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	A certain enchanted forest is inhabited by talking birds. Given any birds [color=papaya_whip]A[/color] and [color=papaya_whip]B[/color], if you call out the name of [color=papaya_whip]B[/color] to [color=papaya_whip]A[/color], then [color=papaya_whip]A[/color] will respond by calling out the name of some bird to you; this bird we designate by [color=papaya_whip]AB[/color]. Thus, [color=papaya_whip]AB[/color] is the bird named by [color=papaya_whip]A[/color] upon hearing the name of [color=papaya_whip]B[/color]. Instead of constantly using the cumbersome phrase “[color=papaya_whip]A[/color]’s response to hearing the name of [color=papaya_whip]B[/color]”, we shall more simply say: “[color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color]”. Thus [color=papaya_whip]AB[/color] is [color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color]. In general, [color=papaya_whip]A[/color]’s response to [color=papaya_whip]B[/color] is not necessarily the same as [color=papaya_whip]B[/color]’s response to [color=papaya_whip]A[/color], in symbols, [color=papaya_whip]AB[/color] is not necessarily the same as [color=papaya_whip]BA[/color]. Also, given three birds [color=papaya_whip]A[/color], [color=papaya_whip]B[/color] and [color=papaya_whip]C[/color], the bird [color=papaya_whip]A(BC)[/color] is not necessarily the same as the bird [color=papaya_whip](AB)C[/color]. The bird [color=papaya_whip]A(BC)[/color] is [color=papaya_whip]A[/color]’s response to the bird [color=papaya_whip]BC[/color], whereas the bird [color=papaya_whip](AB)C[/color] is the response of the bird [color=papaya_whip]AB[/color] to the bird [color=papaya_whip]C[/color]. The use of parenthesis is thus necessary to avoid ambiguity; if I just wrote [color=papaya_whip]ABC[/color], you could not possibly know whether I meant the bird [color=papaya_whip]A(BC)[/color] or the bird [color=papaya_whip](AB)C[/color].
+text = "	A certain enchanted forest is inhabited by talking birds. Given any birds [color=peru]A[/color] and [color=peru]B[/color], if you call out the name of [color=peru]B[/color] to [color=peru]A[/color], then [color=peru]A[/color] will respond by calling out the name of some bird to you; this bird we designate by [color=peru]AB[/color]. Thus, [color=peru]AB[/color] is the bird named by [color=peru]A[/color] upon hearing the name of [color=peru]B[/color]. Instead of constantly using the cumbersome phrase “[color=peru]A[/color]’s response to hearing the name of [color=peru]B[/color]”, we shall more simply say: “[color=peru]A[/color]’s response to [color=peru]B[/color]”. Thus [color=peru]AB[/color] is [color=peru]A[/color]’s response to [color=peru]B[/color].
+"
+fit_content = true
+scroll_active = false
+
+[node name="Text2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 287.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	In general, [color=peru]A[/color]’s response to [color=peru]B[/color] is not necessarily the same as [color=peru]B[/color]’s response to [color=peru]A[/color], in symbols, [color=peru]AB[/color] is not necessarily the same as [color=peru]BA[/color].
+"
+fit_content = true
+scroll_active = false
+
+[node name="Text3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2020.0
+offset_top = 287.0
+offset_right = 2848.0
+offset_bottom = 1715.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Also, given three birds [color=papaya_whip]A[/color], [color=papaya_whip]B[/color] and [color=papaya_whip]C[/color], the bird [color=papaya_whip]A(BC)[/color] is not necessarily the same as the bird [color=papaya_whip](AB)C[/color]. The bird [color=papaya_whip]A(BC)[/color] is [color=papaya_whip]A[/color]’s response to the bird [color=papaya_whip]BC[/color], whereas the bird [color=papaya_whip](AB)C[/color] is the response of the bird [color=papaya_whip]AB[/color] to the bird [color=papaya_whip]C[/color]. The use of parenthesis is thus necessary to avoid ambiguity; if I just wrote [color=papaya_whip]ABC[/color], you could not possibly know whether I meant the bird [color=papaya_whip]A(BC)[/color] or the bird [color=papaya_whip](AB)C[/color].
 
 	Mockingbirds: By a mockingbird is meant a bird [color=papaya_whip]M[/color] such that for any bird [color=yellow]x[/color], the following condition holds:
 [center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
@@ -71,6 +111,7 @@ theme_override_font_sizes/font_size = 40
 text = " Previous "
 
 [node name="Next" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1770.0
 offset_top = 927.0
@@ -79,5 +120,37 @@ offset_bottom = 990.0
 theme_override_font_sizes/font_size = 40
 text = " Next "
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 227.0
+offset_top = 571.0
+offset_right = 812.0
+offset_bottom = 899.0
+texture = ExtResource("3_dswtb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1107.0
+offset_top = 287.0
+offset_right = 1692.0
+offset_bottom = 615.0
+texture = ExtResource("4_7p6gb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Next2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1714.0
+offset_top = 855.0
+offset_right = 1814.0
+offset_bottom = 955.0
+texture_normal = ExtResource("5_qstjn")
+texture_pressed = ExtResource("6_qt2l5")
+ignore_texture_size = true
+stretch_mode = 4
+
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Next2" to="." method="_on_next_pressed"]

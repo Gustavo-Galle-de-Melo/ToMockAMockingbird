@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://164nkmlea44s"]
 
 [ext_resource type="Script" path="res://Level/Goal.gd" id="1_ad3xo"]
-[ext_resource type="Texture2D" uid="uid://bt57hmw2q0c1w" path="res://assets/allBirdsHitbox2.png" id="2_rt6me"]
+[ext_resource type="Texture2D" uid="uid://byrrsipt1ydag" path="res://assets/allBirdsHitbox3.png" id="2_2cm2a"]
 
 [node name="Goal" type="Control"]
 layout_mode = 3
@@ -17,7 +17,7 @@ script = ExtResource("1_ad3xo")
 [node name="Image" type="Sprite2D" parent="."]
 position = Vector2(142, 198)
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_rt6me")
+texture = ExtResource("2_2cm2a")
 
 [node name="Name" type="RichTextLabel" parent="."]
 layout_mode = 0

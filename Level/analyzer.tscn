@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkm4mr6ysiayc"]
+[gd_scene load_steps=7 format=3 uid="uid://bkm4mr6ysiayc"]
 
 [ext_resource type="Script" path="res://Level/Analyzer.gd" id="1_fksrv"]
 [ext_resource type="Texture2D" uid="uid://dlr1d2whrey36" path="res://assets/previous.png" id="2_4sxy4"]
+[ext_resource type="Texture2D" uid="uid://cw6s2x3lmgsrd" path="res://assets/analyzer.png" id="2_krcpk"]
 [ext_resource type="Texture2D" uid="uid://kwllj1jcusc0" path="res://assets/pressedPrevious.png" id="3_vpyao"]
 [ext_resource type="Texture2D" uid="uid://d1fxbopad16ie" path="res://assets/next.png" id="4_rl4cg"]
 [ext_resource type="Texture2D" uid="uid://csp25u5f2qsrf" path="res://assets/pressedNext.png" id="5_2ut0o"]
@@ -17,11 +18,18 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fksrv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Hitbox" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 559.0
 offset_bottom = 422.0
-color = Color(0.282353, 0.341176, 0.360784, 1)
+color = Color(0, 0, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 559.0
+offset_bottom = 422.0
+mouse_filter = 2
+texture = ExtResource("2_krcpk")
 
 [node name="Previous" type="TextureButton" parent="."]
 layout_mode = 0
@@ -73,7 +81,7 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "B C C x"
+text = "B C C"
 
 [node name="Rule" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -103,9 +111,9 @@ theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "B C C"
+text = "B C C x"
 
-[connection signal="mouse_entered" from="ColorRect" to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect" to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Hitbox" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Hitbox" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

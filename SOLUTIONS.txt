@@ -1,3 +1,5 @@
+# sandbox
+	sandbox
 
 # tutorial
 # new: C, P, T
@@ -42,8 +44,8 @@
 	BRW->M 5	# M = R (B W R) R
 	BKM->P 3	# P = B M K
 	BT->R 3		# R = B B T
-	BKT->P 4	# P = B (T _) K
 	BT->P 6		# P = B (T T) R {R = B B T}
+	BKT->P 4	# P = B (T _) K
 	BT->C 8		# C = B (T R) R {R = B B T}
 
 # new: Q
@@ -59,14 +61,14 @@
 	QT->C 4		# C = Q Q (Q T)
 	MQT->R 5	# R = M C {C = Q Q (Q T)}
 	QT->P 4		# P = Q T (Q T)
-	QT->B 4		# C = Q T (Q Q)
+	QT->B 4		# B = Q T (Q Q)
 	QT->R 6		# R = Q (Q T T) (Q Q) = Q T B {B = Q T (Q Q)}
 	BT->Q 6		# Q = B (T B) R {R = B B T}
 
 # new: L
 	"Lark"
 	LP->M 2		# M = L P
-	QM->L 2		# L = Q M
+	MQ->L 2		# L = Q M
 	BW->L 3		# L = B W B
 	BMR->L 3	# L = R M B
 	BCM->L 3	# L = C B M
@@ -129,6 +131,7 @@
 	DF->P 7		# P = D (F F F) (D D) F
 	DFJP->A 6	# A = D (F P P) P J
 	DFJ->A 12	# A = D (F P J) F J {P = D (F F F) (D D) F}
+	NR->F 4		# F = R R (N R)
 	CN->F 6		# F = C (N R) R {R = C C}
 	FPQ->T 8	# T = Q (Q F Q) (F P (Q Q))
 	
@@ -137,14 +140,14 @@
 	KS->P 3		# P = A _ {A = S K}
 	KS->A 2		# A = S K
 	KS->O 4		# O = S P = {P = A K, A = S K}
-	KS->M 7		# 7: S P P {P = A _, A = S K}
-	KS->J 8		# 8: J = K M {M = O P, O = S P, P = A _, A = S K}
+	KS->M 7		# M = O P {O = S P, P = A _, A = S K}
+	KS->J 8		# J = K M {M = O P, O = S P, P = A _, A = S K}
 	KS->B 4		# B = S (K S) K
 	KS->W 4		# W = S S A {A = S K}
 	KS->T 7		# T = S (K O) K {O = S P, P = A _, A = S K}
 	KS->Q 8		# Q = S (K (S B)) K {B = S (K S) K}
 	KS->R 8		# R = S (K (S S)) (S (K K) K)
-	KS->N 8		# 8: N = S B P {B = S (K S) K, P = A _, A = S K}
+	KS->N 8		# N = S B P {B = S (K S) K, P = A _, A = S K}
 	KS->C 10	# C = S (S (K S) (S (K K) S)) (K K)
 	KS->D 10	# D = S (K B) B {B = S (K S) K}
 	KS->L 10	# L = S (K W) B {W = S S A, A = S K, B = S (K S) K}
@@ -154,7 +157,7 @@
 	"Final challenges (TODO)"
 	BCM->W 5		# W = C (B M R) {R = C C}
 	KMQ->T 11		# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
-	FQ->P 11		# 11: P = Q (Q F Q) (F Q (F (Q F) (Q F)))
+	FQ->P 11		# P = Q (Q F Q) (F Q (F (Q F) (Q F)))
 	FKQ->C 15		# C = Q (Q (Q Q Q) (F K Q)) (Q (F Q) (Q (Q F Q)))
 	BF->C 15		# C = B (B (F (B (B (B B) F) F) F) (B (B B B))) F
 	DT->R 17		# R = D (D (T T) (T T)) (D D (D (T T) (D (T T)) (D D T)))
