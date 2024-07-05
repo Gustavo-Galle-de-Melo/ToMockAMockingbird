@@ -123,7 +123,7 @@ func eval() -> Eval_result:
 
 
 func introduce_fake_var(next_var: int) -> Eval_result:
-	if leftmost_leaf is Simple_bird and contains_var:
+	if leftmost_leaf is Simple_bird and contains_var and size > 1:
 		var new_var: Var = Var.new(next_var)
 		new_var.is_fake = true
 		

@@ -67,7 +67,7 @@ func string(color: bool) -> String:
 		var hint: String = "This bird is imaginary, it must not be present in the final result"
 		return "[color=darkred][hint=%s]" % hint + letter + "[/hint][/color]"
 	else:
-		return "[color=blanched_almond]" + letter + "[/color]"
+		return "[color=peach_puff]" + letter + "[/color]"
 
 
 func rule_string() -> String:

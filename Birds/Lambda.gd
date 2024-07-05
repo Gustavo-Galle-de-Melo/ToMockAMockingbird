@@ -33,6 +33,24 @@
 		# x (y 'z')				# 'w' elimination
 		# x y					# 'z' elimination
 		# P x y	# correct solution
+# apparently I misunderstood combinatorial logic, this would only
+# be valid if CL were extensional, which it isn't.
+# lambda calculus is extensional, so this is valid there
+# using the 'correct' version of CL would have a lot of pros and cons:
+	# pros:
+		# the rules become simpler
+		# this class becomes unecessary
+		# the 'more birds' rule also becomes unecessary
+	# cons:
+		# many levels become invalid
+		# some of the invalid levels would have been relevant later
+		# this definition gets farther from actual turing completeness
+		# I have no experience with this
+		# the game is already coded with this 'wrong' version
+		# without the 'more birds' rule, the analyzer becomes
+			# less like 'figure out what this bird is' and more like 'is this the goal'
+# but I chose not to use it mainly because a lot of easier level would become
+# invalid like CT->P
 class_name Lambda
 extends Bird
 

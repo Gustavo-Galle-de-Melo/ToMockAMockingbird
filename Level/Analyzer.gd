@@ -93,7 +93,7 @@ func _on_next_pressed() -> void:
 		if not elimination:
 			$Before.text = current_bird.string(true)
 			$After.text = current_bird.string(true)
-			$Rule.text = "[hint=Imaginary bird could not be removed]Invalid bird[/hint]"
+			$Rule.text = "[hint=The imaginary birds could not be removed]Invalid bird[/hint]"
 			history.append([current_bird, next_var])
 			halted = true
 			return
@@ -133,7 +133,7 @@ func _on_next_pressed() -> void:
 		$Before.text = bird_string
 		if Settings.full_string and not current_bird.is_leaf:
 			bird_string = Apply.colored_open + bird_string + Apply.colored_close
-		$After.text = bird_string + " [color=cyan]" + new_var.string(false) + "[/color]"
+		$After.text = bird_string + " [color=blue]" + new_var.string(false) + "[/color]"
 		$Rule.text = "More birds"
 		history.append([current_bird, next_var])
 		current_bird = Apply.new(current_bird, new_var)
