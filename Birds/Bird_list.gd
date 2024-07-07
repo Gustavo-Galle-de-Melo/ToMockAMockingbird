@@ -1,6 +1,8 @@
 # class that defines all important birds
 class_name Bird_list
 
+static var images: Dictionary = {}
+
 
 # these are here to make the bird definitions cleaner
 static var x = Var.new(0)
@@ -65,7 +67,9 @@ static var all_birds: Array[Simple_bird] = [
 
 static func get_image(bird: Bird) -> Texture:
 	if bird is Simple_bird:
-		return load("res://assets/" + bird.full_name + ".png")
+		if not bird in images.keys():
+			images[bird] = load("res://assets/" + bird.full_name + ".png")
+		return images[bird]
 	else:
 		return preload("res://assets/Null.png")
 

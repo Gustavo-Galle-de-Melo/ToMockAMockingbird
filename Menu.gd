@@ -55,6 +55,10 @@ func _on_settings_button_pressed() -> void:
 	$CanvasLayer/Settings_menu.visible = true
 
 
+func _on_settings_button_down() -> void:
+	GlobalAudio.play_click()
+
+
 func _on_scroll_cooldown_timeout() -> void:
 	camera_movement_enabled = true
 	$Mouse/Camera.position_smoothing_speed = 5

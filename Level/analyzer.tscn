@@ -115,5 +115,7 @@ text = "B C C x"
 
 [connection signal="mouse_entered" from="Hitbox" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Hitbox" to="." method="_on_mouse_exited"]
+[connection signal="button_down" from="Previous" to="." method="_on_previous_button_down"]
 [connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="button_down" from="Next" to="." method="_on_next_button_down"]
 [connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

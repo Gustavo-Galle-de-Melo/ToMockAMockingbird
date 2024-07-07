@@ -159,3 +159,11 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	is_mouse_over = false
+
+
+func _on_previous_button_down() -> void:
+	GlobalAudio.play_click()
+
+
+func _on_next_button_down() -> void:
+	GlobalAudio.play_click()

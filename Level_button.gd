@@ -33,3 +33,7 @@ func set_number(number) -> void:
 func _on_button_pressed() -> void:
 	Player_data.get_instance().playing_level = number
 	get_tree().change_scene_to_file("res://Level/level.tscn")
+
+
+func _on_button_down() -> void:
+	GlobalAudio.play_click()

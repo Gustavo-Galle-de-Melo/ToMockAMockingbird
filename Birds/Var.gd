@@ -15,6 +15,11 @@ func _init(id: int) -> void:
 	self.id = id
 
 
+func set_fake() -> void:
+	is_fake = true
+	size = 1
+
+
 func eval() -> Eval_result:
 	return Eval_result.new(self, null, string(true), string(true))
 

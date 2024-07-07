@@ -15,6 +15,7 @@ func update_full_string_example() -> void:
 
 
 func _on_full_string_toggled(toggled_on: bool) -> void:
+	GlobalAudio.play_click()
 	Settings.full_string = toggled_on
 	update_full_string_example()
 

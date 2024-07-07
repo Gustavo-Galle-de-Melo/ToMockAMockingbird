@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt3t7tpyxl6w2"
-path="res://.godot/imported/Warbler.png-14dcd756a20ef591de2c2afe29b7f30d.ctex"
+uid="uid://covaryamvil03"
+path="res://.godot/imported/Warbler0.png-476f120a701074fb4e7e419c67084999.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Warbler.png"
-dest_files=["res://.godot/imported/Warbler.png-14dcd756a20ef591de2c2afe29b7f30d.ctex"]
+source_file="res://assets/Warbler0.png"
+dest_files=["res://.godot/imported/Warbler0.png-476f120a701074fb4e7e419c67084999.ctex"]
 
 [params]
 

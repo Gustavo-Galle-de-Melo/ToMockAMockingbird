@@ -33,7 +33,7 @@ static var levels_and_tutorials: Array = [
 
 # new: A, K
 	Tutorial_data.new(3, "Albatross and Kestrel", "res://Tutorials/tutorial_albatross_kestrel.tscn"),
-	Level_data.new(3, "A", "P", 2, "This is the easiest level in the game, you don't need a hint"),
+	Level_data.new(3, "A", "P", 2, "Try playing the game before looking at the hint"),
 	# P = A _
 	Level_data.new(3, "KP", "A", 2, "This can be done with a bird of size 2"),
 	# A = K P
@@ -138,7 +138,7 @@ static var levels_and_tutorials: Array = [
 
 # new: J
 	Tutorial_data.new(8, "Jay", "res://Tutorials/tutorial_jay.tscn"),
-	Level_data.new(8, "J", "M", 2, "You don't need a hint for this"),
+	Level_data.new(8, "J", "M", 2, "It's literally impossible to find any other bird"),
 	# M = J _
 	Level_data.new(8, "KM", "J", 2, "This can be done with a bird of size 2"),
 	# J = K M

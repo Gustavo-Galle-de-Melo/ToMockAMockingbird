@@ -10,4 +10,5 @@ func _on_previous_pressed() -> void:
 
 
 func _on_next_pressed() -> void:
+	GlobalAudio.play_page()
 	get_tree().change_scene_to_file(next)

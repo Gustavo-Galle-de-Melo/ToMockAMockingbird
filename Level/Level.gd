@@ -117,7 +117,8 @@ func drop_bird() -> void:
 	for bird in all_birds:
 		if bird == held_bird:
 			continue
-		if bird.hitbox.overlaps_area(held_bird.hitbox):
+		if bird.hitbox.overlaps_area(held_bird.hitbox) \
+				and bird.full_bird.size + held_bird.full_bird.size <= 256:
 			join_birds(bird, held_bird)
 			held_bird = null
 			return
@@ -200,6 +201,9 @@ func _on_analyzer_bird_found(formula: Bird, bird: Simple_bird, full_bird_size: i
 	# reselect bird
 	select_bird(bird, full_bird_size)
 	
+	if bird.equals($Goal.bird):
+		GlobalAudio.play_win()
+	
 	for bird_found in birds_found:
 		if bird_found[0].equals(formula) and bird_found[1].equals(bird):
 			# already found
@@ -219,7 +223,7 @@ func _on_analyzer_bird_found(formula: Bird, bird: Simple_bird, full_bird_size: i
 	# test whether the level was completed
 	if bird.equals($Goal.bird):
 		won($Available_birds.get_bird_size(bird))
-
+	
 
 # player won with a bird of size `size`
 func won(size: int) -> void:
@@ -271,3 +275,7 @@ func _on_reset_pressed() -> void:
 
 func _on_hint_pressed() -> void:
 	$HintText.visible = true
+
+
+func _on_button_down() -> void:
+	GlobalAudio.play_click()
