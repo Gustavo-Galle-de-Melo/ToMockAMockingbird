@@ -1,69 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3tcwrjr4xhew"]
+[gd_scene load_steps=2 format=3 uid="uid://d35msf2ys45l4"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_1guxk"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_7ppl0"]
 
-[node name="Tutorial" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1guxk")
-next = "res://menu.tscn"
+mouse_filter = 2
+script = ExtResource("1_7ppl0")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1920.0
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
 offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Robin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 124.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
 offset_top = 180.0
-offset_right = 1828.0
-offset_bottom = 985.0
+offset_right = 932.0
+offset_bottom = 810.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	The robin is a bird [color=papaya_whip]R[/color] such that for any birds [color=yellow]x[/color], [color=orange]y[/color] and [color=orangered]z[/color], the following condition hods:
+text = "	The robin is a bird [color=peru]R[/color] such that for any birds [color=darkgoldenrod]x[/color], [color=orange]y[/color] and [color=orangered]z[/color], the following condition hods:
 
-[center](([b][color=green]R[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color]) [color=orangered]z[/color] = ([color=orange]y[/color] [color=orangered]z[/color]) [color=yellow]x[/color][/center]
+[center](([b][color=green]R[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color]) [color=orangered]z[/color] = ([color=orange]y[/color] [color=orangered]z[/color]) [color=darkgoldenrod]x[/color][/center]
 
-	It is similar to the cardinal, both \"rearrange\" the birds [color=yellow]x[/color], [color=orange]y[/color] and [color=orangered]z[/color], this can be very useful when finding new birds. In the following levels you will explore some ways this bird can be used.
+	It is similar to the cardinal, both \"rearrange\" the birds [color=darkgoldenrod]x[/color], [color=orange]y[/color] and [color=orangered]z[/color], this can be very useful when finding new birds. In the following levels you will explore some ways this bird can be used.
 
-	The amount of parenthesis in some of these rules can be confusing, to avoid this problem there is a convention that ([color=yellow]x[/color] [color=orange]y[/color]) [color=orangered]z[/color] can be simply written as [color=yellow]x[/color] [color=orange]y[/color] [color=orangered]z[/color]. On the other hand, [color=yellow]x[/color] ([color=orange]y[/color] [color=orangered]z[/color]) stays the same. This way the lack of parenthesis is not ambiguous anymore, if there are two ways parenthesis can be inserted in an expression, then the left one is the correct one. This way the rule can be written as: [b][color=green]R[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] [color=orangered]z[/color] = [color=orange]y[/color] [color=orangered]z[/color] [color=yellow]x[/color]. You can choose which notation to use in the settings at any moment, so feel free to use whatever you find easier to understand.
-
-	You might have noticed that it is possible to earn a star in each level, this can be done by finding the goal bird using a limited number of birds. The limit of how many birds the star allows is revealed once the level is beaten once, but feel free to leave the star for later if you find it too difficult in the moment.
-"
+	The amount of parenthesis in some of these rules can be confusing, to avoid this problem there is a convention that ([color=darkgoldenrod]x[/color] [color=orange]y[/color]) [color=orangered]z[/color] can be simply written as [color=darkgoldenrod]x[/color] [color=orange]y[/color] [color=orangered]z[/color]. On the other hand, [color=darkgoldenrod]x[/color] ([color=orange]y[/color] [color=orangered]z[/color]) stays the same. This way the lack of parenthesis is not ambiguous anymore, if there are"
 fit_content = true
 scroll_active = false
 
-[node name="Previous" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 34.0
-offset_top = 927.0
-offset_right = 154.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Previous "
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "two ways parenthesis can be inserted in an expression, then the left one is the correct one. This way the rule can be written as: [b][color=green]R[/color][/b] [color=darkgoldenrod]x[/color] [color=orange]y[/color] [color=orangered]z[/color] = [color=orange]y[/color] [color=orangered]z[/color] [color=darkgoldenrod]x[/color]. You can choose which notation to use in the settings at any moment, so feel free to use whatever you find easier to understand.
 
-[node name="Next" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1770.0
-offset_top = 927.0
-offset_right = 1890.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Menu "
-
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+	You might have noticed that it is possible to earn a star in each level, this can be done by finding the goal bird using a limited number of birds. The limit of how many birds the star allows is revealed once the level is beaten once, but feel free to leave the star for later if you find it too difficult in the moment."
+fit_content = true
+scroll_active = false

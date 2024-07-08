@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://oi73kek5skx0"]
+
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_7iyu3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7iyu3")
+previous = "res://Tutorials/final_challenges2.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
+offset_top = 121.0
+offset_right = 932.0
+offset_bottom = 415.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "							[color=peru]BDJLMNOP[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMNOPQ[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMNOPQS[/color]	➔ [color=peru]ACFKRT[/color]
+							[color=peru]BDJLMNOPQSW[/color]➔ [color=peru]ACFKRT[/color]
+							[color=peru]BDJLMNOPS[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]BDJLMNOPSW[/color]	➔ [color=peru]ACFKRT[/color]
+							[color=peru]BDJLMNOPW[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMNPQ[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMOP[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMOPQ[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJLMPQ[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJMNOP[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]BDJMNOPS[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]BDJMOP[/color]				➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMNOP[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMNOPQ[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMNOPQS[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJLMNOPQSW[/color]	➔ [color=peru]ACFKRT[/color]"
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "							[color=peru]DJLMNOPS[/color]			➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJLMNOPSW[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJLMNOPW[/color]		➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMNPQ[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMOP[/color]				➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMOPQ[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMOPS[/color]			➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJLMOPSW[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJLMOPW[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]DJLMPQ[/color]				➔ [color=peru]CFKRT[/color]
+							[color=peru]DJMNOP[/color]				➔ [color=peru]CFKRT[/color]
+							[color=peru]DJMNOPS[/color]			➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJMNOPSW[/color]		➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJMNOPW[/color]			➔ [color=peru]CFKRT[/color]
+							[color=peru]DJMOP[/color]				➔ [color=peru]CFKRT[/color]
+							[color=peru]DJMOPS[/color]				➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJMOPSW[/color]			➔ [color=peru]ACFKRT[/color]
+							[color=peru]DJMOPW[/color]			➔ [color=peru]CFKRT[/color]"
+fit_content = true
+scroll_active = false

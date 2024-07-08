@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://blgou0s0n5ryp"]
+
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_3p8yj"]
+[ext_resource type="Texture2D" uid="uid://bn256rcjaqbi" path="res://assets/tutorialCT.png" id="2_7fa6u"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3p8yj")
+previous = "res://Tutorials/introduction3.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 121.0
+offset_right = 932.0
+offset_bottom = 415.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Cardinal: One last bird I need to tell you about for now is the cardinal. The cardinal is again a bit more complicated; it follows this condition:
+[center](([b][color=green]C[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color]) [color=orangered]z[/color] = ([color=darkgoldenrod]x[/color] [color=orangered]z[/color]) [color=orange]y[/color][/center]
+	When [color=peru]C[/color] hears a bird [color=darkgoldenrod]x[/color], it responds by calling out a new bird [color=peru]C[/color][color=darkgoldenrod]x[/color]. When [color=peru]C[/color][color=darkgoldenrod]x[/color] hears a bird [color=orange]y[/color], it responds with another new bird ([color=peru]C[/color][color=darkgoldenrod]x[/color])[color=orange]y[/color]. Finally when ([color=peru]C[/color][color=darkgoldenrod]x[/color])[color=orange]y[/color] hears [color=orangered]z[/color], it responds with what [color=darkgoldenrod]x[/color][color=orangered]z[/color] would have said when hearing [color=orange]y[/color].
+
+	Now that we know some birds we can start to learn about them. One interesting place to start is by trying to figure out what is [color=peru]C[/color]’s response to [color=peru]T[/color]. From what we have learned so far, there doesn't seem to be a rule telling us what this bird is. One way of finding out what bird it is, is by calling out the name of a new bird [color=darkgoldenrod]x[/color] to it and seeing how it responds. When [color=peru]C[/color][color=peru]T[/color] hears [color=darkgoldenrod]x[/color], it responds by "
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 99.0
+offset_right = 1832.0
+offset_bottom = 645.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "calling out ([color=peru]CT[/color])[color=darkgoldenrod]x[/color]. We can try calling out the name of another bird [color=orange]y[/color]. When we do this, ([color=peru]CT[/color])[color=darkgoldenrod]x[/color] responds with (([color=peru]CT[/color])[color=darkgoldenrod]x[/color])[color=orange]y[/color]. But now we can apply what we know about [color=peru]C[/color]: whenever the conversation of the birds looks like (([color=peru]Cx[/color])[color=darkgoldenrod]y[/color])[color=orange]z[/color], the result is ([color=peru]x[/color][color=orange]z[/color])[color=darkgoldenrod]y[/color]. So (([color=peru]CT[/color])[color=darkgoldenrod]x[/color])[color=orange]y[/color] is the same as ([color=peru]T[/color][color=orange]y[/color])[color=darkgoldenrod]x[/color]. But now we can apply [color=peru]T[/color]’s rule: whenever the conversation looks like ([color=peru]T[/color][color=orange]x[/color])[color=darkgoldenrod]y[/color], the result is [color=darkgoldenrod]y[/color][color=orange]x[/color]. Therefore ([color=peru]T[/color][color=orange]y[/color])[color=darkgoldenrod]x[/color] is the same as [color=darkgoldenrod]x[/color][color=orange]y[/color]. So [color=peru]CT[/color] is a bird [color=peru]?[/color] with the property that ([color=peru]?[/color][color=darkgoldenrod]x[/color])[color=orange]y[/color] = [color=darkgoldenrod]x[/color][color=orange]y[/color], we happen to know such a bird: [color=peru]P[/color]. If we call out [color=darkgoldenrod]x[/color] to [color=peru]P[/color], [color=peru]P[/color] will respond with [color=darkgoldenrod]x[/color]. If we then call out [color=orange]y[/color] to [color=darkgoldenrod]x[/color] we get [color=darkgoldenrod]x[/color][color=orange]y[/color] just like in the case for [color=peru]CT[/color]. So we have figured out that whenever [color=peru]C[/color] hears [color=peru]T[/color], it responds with [color=peru]P[/color].
+"
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1135.0
+offset_top = 625.0
+offset_right = 1657.0
+offset_bottom = 919.0
+texture = ExtResource("2_7fa6u")
+expand_mode = 1
+stretch_mode = 4

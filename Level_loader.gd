@@ -43,8 +43,8 @@ static var levels_and_tutorials: Array = [
 	# K = R A R
 	Level_data.new(3, "CK", "A", 2, "This can be done with a bird of size 2"),
 	# A = C K
-	Level_data.new(3, "CK", "P", 3, "Remember the previous levels and try to find the Parrot"),
-	# P = C K _
+	Level_data.new(3, "CK", "P", 3, "Remember the previous levels and try to find the Albatross"),
+	# P = A _ {A = C K}
 	Level_data.new(3, "KR", "A", 3, "Remember the previous levels and try to find the Cardinal"),
 	# A = R K R
 	Level_data.new(3, "AR", "T", 4, "Remember the previous levels and try to find the Cardinal and the Parrot"),
@@ -239,7 +239,7 @@ static var levels_and_tutorials: Array = [
 	# T = Q (Q F Q) (F P (Q Q))
 	
 # turing completeness section:
-	Tutorial_data.new(14, "All birds (TODO)", "res://Tutorials/tutorial_starling.tscn"),
+	Tutorial_data.new(14, "All birds", "res://Tutorials/all_birds.tscn"),
 	Level_data.new(14, "KS", "P", 3, "This can be done with a bird of size 3"),
 	# P = A _ {A = S K}
 	Level_data.new(14, "KS", "A", 2, "Remember the previous levels and try to find the Parrot"),
@@ -272,7 +272,7 @@ static var levels_and_tutorials: Array = [
 	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
 	
 # hardest levels:
-	Tutorial_data.new(15, "Final challenges (TODO)", "res://Tutorials/tutorial_starling.tscn"),
+	Tutorial_data.new(15, "Final challenges", "res://Tutorials/final_challenges1.tscn"),
 	Level_data.new(15, "BCM", "W", 5, "This can be done with a bird of size 5"),
 	# W = C (B M R) {R = C C}
 	Level_data.new(15, "KMQ", "T", 11, "This can be done with a bird of size 11"),
@@ -301,16 +301,16 @@ static var levels_and_tutorials: Array = [
 	# B = C (C (N (T (C (N (C (C (T K) (C (C (N F) N) P)))) (T (C O (R (C (K (C O T)))))))) P) C) {T = C P, P = N C, R = C C}
 	
 # 'impossible' levels:
-	Tutorial_data.new(14, "Optimization (TODO)", "res://Tutorials/tutorial_starling.tscn"),
-	Level_data.new(15, "DT", "R", 15, "Good luck"),
+	Tutorial_data.new(14, "Bonus", "res://Tutorials/bonus.tscn"),
+	Level_data.new(15, "DT", "R", 15, "Good luck!"),
 	# R = D (T (D T)) (D D (D (D (T T) (T T)))) (D D T)
-	Level_data.new(14, "KS", "N", 7, "Good luck"),
+	Level_data.new(14, "KS", "N", 7, "Good luck!"),
 	# N = S (S (K (S S)) K) K
-	Level_data.new(14, "KS", "M", 6, "Good luck"),
+	Level_data.new(14, "KS", "M", 6, "Good luck!"),
 	# M = S (S S) S A {A = S K}
-	Level_data.new(14, "KS", "J", 7, "Good luck"),
+	Level_data.new(14, "KS", "J", 7, "Good luck!"),
 	# J = K M {M = S (S S) S A, A = S K} = S (S B K) {B = S (K S) K}
-	Level_data.new(15, "FQ", "P", 10, "Good luck"),
+	Level_data.new(15, "FQ", "P", 10, "Good luck!"),
 	# P = Q (F (Q F)) (Q (Q F (Q Q Q)))
 	
 	# maybe

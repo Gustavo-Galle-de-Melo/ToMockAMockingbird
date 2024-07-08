@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djg1ncl6sm1lp"
-path="res://.godot/imported/livro.png-c0a334f07c3309f7f7bb564735da4f36.ctex"
+uid="uid://dtjwd6y42iu1a"
+path="res://.godot/imported/Starling0.png-b183842e366a89d667273048296df9a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/livro.png"
-dest_files=["res://.godot/imported/livro.png-c0a334f07c3309f7f7bb564735da4f36.ctex"]
+source_file="res://assets/Starling0.png"
+dest_files=["res://.godot/imported/Starling0.png-b183842e366a89d667273048296df9a6.ctex"]
 
 [params]
 

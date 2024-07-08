@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bb2o8rc4vspn6"]
+[gd_scene load_steps=2 format=3 uid="uid://clly3rfg4rb08"]
 
-[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_bwar4"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_nt8so"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_bwar4")
+script = ExtResource("1_nt8so")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 78.0
@@ -19,7 +19,7 @@ offset_right = 960.0
 offset_bottom = 180.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-text = "Jay"
+text = "All birds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -36,8 +36,6 @@ theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
 text = "
-[center]([b][color=green]J[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color] = [color=orange]y[/color] [color=orange]y[/color]     or     [b][color=green]J[/color][/b] [color=darkgoldenrod]x[/color] [color=orange]y[/color] = [color=orange]y[/color] [color=orange]y[/color][/center]
-
-	The jay’s rule is a mix between the albatross’ ignoring abilities and the mockingbird’s mocking abilities. This means that the only way to ignore a bird is by mocking another."
+As I told you before, the starling is a very skilled bird, combining the skills of the thrush, the mockingbird and the bluebird. The only thing the starling can't do is to ignore other birds. On the other hand, the kestrel is the oposite, it can only ignore others and nothing else. When these two team up they become unstoppable, they can do anything and find any other bird. Now, using only these two, go ahead and find all other 15 birds I've taught you."
 fit_content = true
 scroll_active = false

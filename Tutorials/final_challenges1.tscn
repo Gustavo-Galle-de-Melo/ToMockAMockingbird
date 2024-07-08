@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdfd2chhd4vox"]
+
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_x2g2a"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_x2g2a")
+next = "res://Tutorials/final_challenges2.tscn"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Final challenges"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 180.0
+offset_right = 932.0
+offset_bottom = 810.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	It’s incredible what the starling and the kestrel can do together, but they are not the only ones that can find every bird. Consider the birds [color=peru]B[/color], [color=peru]C[/color], [color=peru]K[/color] and [color=peru]W[/color], for example, they can find [color=peru]S[/color], as you have seen in the level [color=peru]BCW[/color]➔[color=peru]S[/color], and then [color=peru]S[/color] and [color=peru]K[/color] can find everybody else. We can find out whether some birds can find everybody by trying to find a group of birds that we already know that can. Let’s look at another example: the birds [color=peru]ANQT[/color] can also find everybody. By using the solutions from levels [color=peru]QT[/color]➔[color=peru]C[/color], [color=peru]AC[/color]➔[color=peru]K[/color], [color=peru]CQ[/color]➔[color=peru]B[/color] and [color=peru]BCN[/color]➔[color=peru]W[/color] we can find the birds [color=peru]BCKW[/color]. The birds [color=peru]ANT[/color], on the other hand, can’t find some birds. Using the level [color=peru]A[/color]➔[color=peru]P[/color] we can get to [color=peru]ANPT[/color], but then there’s nothing else we can do after that.
+	With the 17 birds we know, we can make 131071 different groups of birds. We can then use the levels as"
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "instructions to find as many birds as possible using each group of birds. If, after doing so, a group of birds was able to find all 17 birds, then they can find any possible bird you can imagine, even the ones with crazy rules like (([b][color=green]?[/color][/b][color=darkgoldenrod]x[/color])[color=orange]y[/color])[color=orangered]z[/color]=[color=orangered]z[/color]([color=orangered]z[/color](([color=darkgoldenrod]x[/color][color=orange]y[/color])[color=darkgoldenrod]x[/color]). On the other hand, if after going through all the levels there are still some missing birds, then there are birds that are impossible to be found using that group. This way you can use the levels to tell exactly when a certain group can or cannot find all birds.
+	For this strategy to work with any group of birds we will need a few more levels to complete the list of everything that’s possible to find. These levels will be the most challenging you’ve encountered so far, because they are very close to being impossible to solve. With these next levels this strategy will work with 131008 out of the 131071 groups of birds (or about 99.95% of them),"
+fit_content = true
+scroll_active = false

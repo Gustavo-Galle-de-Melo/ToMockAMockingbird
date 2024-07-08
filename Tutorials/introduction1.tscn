@@ -1,36 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bag07vjcfvakk"]
+[gd_scene load_steps=4 format=3 uid="uid://dp5i8ol8ski1n"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_bgoyt"]
-[ext_resource type="Texture2D" uid="uid://djg1ncl6sm1lp" path="res://assets/livro.png" id="2_nyh0b"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_2xebu"]
 [ext_resource type="Texture2D" uid="uid://qi53yywqhnli" path="res://assets/tutorialAB.png" id="3_dswtb"]
 [ext_resource type="Texture2D" uid="uid://vq7v4b868j7t" path="res://assets/tutorialBA.png" id="4_7p6gb"]
-[ext_resource type="Texture2D" uid="uid://d1fxbopad16ie" path="res://assets/next.png" id="5_qstjn"]
-[ext_resource type="Texture2D" uid="uid://csp25u5f2qsrf" path="res://assets/pressedNext.png" id="6_qt2l5"]
 
-[node name="Tutorial" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bgoyt")
+mouse_filter = 2
+script = ExtResource("1_2xebu")
 next = "res://Tutorials/introduction2.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1017.0
-color = Color(0.439216, 0.698039, 0.909804, 1)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1017.0
-texture = ExtResource("2_nyh0b")
-expand_mode = 1
-
-[node name="Title" type="Label" parent="."]
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 78.0
 offset_top = 44.0
@@ -42,7 +27,7 @@ text = "Introduction to birds"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 104.0
 offset_top = 180.0
@@ -60,7 +45,7 @@ text = "	A certain enchanted forest is inhabited by talking birds. Given any bir
 fit_content = true
 scroll_active = false
 
-[node name="Text2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 1004.0
 offset_top = 121.0
@@ -78,49 +63,7 @@ text = "	In general, [color=peru]A[/color]’s response to [color=peru]B[/color]
 fit_content = true
 scroll_active = false
 
-[node name="Text3" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 2020.0
-offset_top = 287.0
-offset_right = 2848.0
-offset_bottom = 1715.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 30
-theme_override_font_sizes/bold_font_size = 30
-theme_override_font_sizes/italics_font_size = 30
-theme_override_font_sizes/bold_italics_font_size = 30
-theme_override_font_sizes/mono_font_size = 30
-bbcode_enabled = true
-text = "	Also, given three birds [color=papaya_whip]A[/color], [color=papaya_whip]B[/color] and [color=papaya_whip]C[/color], the bird [color=papaya_whip]A(BC)[/color] is not necessarily the same as the bird [color=papaya_whip](AB)C[/color]. The bird [color=papaya_whip]A(BC)[/color] is [color=papaya_whip]A[/color]’s response to the bird [color=papaya_whip]BC[/color], whereas the bird [color=papaya_whip](AB)C[/color] is the response of the bird [color=papaya_whip]AB[/color] to the bird [color=papaya_whip]C[/color]. The use of parenthesis is thus necessary to avoid ambiguity; if I just wrote [color=papaya_whip]ABC[/color], you could not possibly know whether I meant the bird [color=papaya_whip]A(BC)[/color] or the bird [color=papaya_whip](AB)C[/color].
-
-	Mockingbirds: By a mockingbird is meant a bird [color=papaya_whip]M[/color] such that for any bird [color=yellow]x[/color], the following condition holds:
-[center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
-	[color=papaya_whip]M[/color] is called the mockingbird for the simple reason that its response to any bird [color=yellow]x[/color] is the same as [color=yellow]x[/color]’s response to itself, in other words, [color=papaya_whip]M[/color] mimics [color=yellow]x[/color] as far as its response to [color=yellow]x[/color] goes. This means that if you call out [color=yellow]x[/color] to [color=papaya_whip]M[/color] or if you call out [color=yellow]x[/color] to itself, you will get the same response either case. This bird can be confusing to talk to, so we will focus on some other birds first.
-"
-fit_content = true
-scroll_active = false
-
-[node name="Previous" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 34.0
-offset_top = 927.0
-offset_right = 154.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Previous "
-
-[node name="Next" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 1770.0
-offset_top = 927.0
-offset_right = 1890.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Next "
-
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 571.0
@@ -130,7 +73,7 @@ texture = ExtResource("3_dswtb")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 1107.0
 offset_top = 287.0
@@ -139,18 +82,3 @@ offset_bottom = 615.0
 texture = ExtResource("4_7p6gb")
 expand_mode = 1
 stretch_mode = 4
-
-[node name="Next2" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 1714.0
-offset_top = 855.0
-offset_right = 1814.0
-offset_bottom = 955.0
-texture_normal = ExtResource("5_qstjn")
-texture_pressed = ExtResource("6_qt2l5")
-ignore_texture_size = true
-stretch_mode = 4
-
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="Next2" to="." method="_on_next_pressed"]

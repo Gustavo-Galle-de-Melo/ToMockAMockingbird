@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3dwfd6rltnm3"
-path="res://.godot/imported/Starling.png-aa3fdec3f063f5fb4d7b508cb0f758cf.ctex"
+uid="uid://baxcx87pemh47"
+path="res://.godot/imported/Quail0.png-d1cd3d2785079845ac238d86574a71be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Starling.png"
-dest_files=["res://.godot/imported/Starling.png-aa3fdec3f063f5fb4d7b508cb0f758cf.ctex"]
+source_file="res://assets/Quail0.png"
+dest_files=["res://.godot/imported/Quail0.png-d1cd3d2785079845ac238d86574a71be.ctex"]
 
 [params]
 

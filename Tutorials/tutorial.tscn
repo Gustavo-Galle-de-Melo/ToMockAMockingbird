@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvguw4a2p83gb"]
+
+[ext_resource type="Script" path="res://Tutorials/Tutorial.gd" id="1_d1chu"]
+[ext_resource type="Texture2D" uid="uid://djg1ncl6sm1lp" path="res://assets/book.png" id="1_wqvx0"]
+[ext_resource type="Texture2D" uid="uid://dlr1d2whrey36" path="res://assets/previous.png" id="2_dyrn2"]
+[ext_resource type="Texture2D" uid="uid://kwllj1jcusc0" path="res://assets/pressedPrevious.png" id="3_ohc1w"]
+[ext_resource type="Texture2D" uid="uid://d1fxbopad16ie" path="res://assets/next.png" id="4_aqr4q"]
+[ext_resource type="Texture2D" uid="uid://csp25u5f2qsrf" path="res://assets/pressedNext.png" id="5_alqxd"]
+[ext_resource type="Texture2D" uid="uid://dgb4y878lkeos" path="res://assets/menu.png" id="6_ygmmv"]
+[ext_resource type="Texture2D" uid="uid://cnpy280qnoqjp" path="res://assets/pressedMenu.png" id="7_ykenb"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1chu")
+
+[node name="Sky" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1017.0
+color = Color(0.439216, 0.698039, 0.909804, 1)
+
+[node name="Book" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1017.0
+texture = ExtResource("1_wqvx0")
+expand_mode = 1
+
+[node name="Previous" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 856.0
+offset_right = 199.0
+offset_bottom = 956.0
+texture_normal = ExtResource("2_dyrn2")
+texture_pressed = ExtResource("3_ohc1w")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Next" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1718.0
+offset_top = 856.0
+offset_right = 1818.0
+offset_bottom = 956.0
+texture_normal = ExtResource("4_aqr4q")
+texture_pressed = ExtResource("5_alqxd")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Menu" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 1718.0
+offset_top = 856.0
+offset_right = 1818.0
+offset_bottom = 956.0
+texture_normal = ExtResource("6_ygmmv")
+texture_pressed = ExtResource("7_ykenb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]

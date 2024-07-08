@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5y7ptje37xkr"]
+
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_pjvnu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_pjvnu")
+previous = "res://Tutorials/final_challenges1.tscn"
+next = "res://Tutorials/final_challenges3.tscn"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 121.0
+offset_right = 932.0
+offset_bottom = 415.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "but there are 63 cases that I’m not sure if they don't find all 17 birds because they can’t or if it’s because the list of levels is incomplete. So here is the list, including what birds would need to be found to guarantee they can find everybody:
+
+							[color=peru]ABDJLMNOP[/color]		➔ [color=peru]CFKRST[/color]
+							[color=peru]ABDJLMNOPQ[/color]	➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ABDJLMNOPW[/color]	➔ [color=peru]CFKQRST[/color]
+							[color=peru]ABDJLMNPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ABDJLMOP[/color]			➔ [color=peru]CFKRST[/color]
+							[color=peru]ABDJLMOPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ABDJLMPQ[/color]			➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ABDJMNOP[/color]		➔ [color=peru]CFKRST[/color]
+							[color=peru]ABDJMOP[/color]			➔ [color=peru]CFKRST[/color]
+							[color=peru]ABDLMNPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ABDLMPQ[/color]			➔ [color=peru]CFKRSTW[/color]"
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "							[color=peru]ACFJKLMNPRTW[/color]➔ [color=peru]BDOQS[/color]
+							[color=peru]ACFJKMNPRTW[/color]	➔ [color=peru]BDOQS[/color]
+							[color=peru]ADJLMNOP[/color]		➔ [color=peru]CFKRST[/color]
+							[color=peru]ADJLMNOPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ADJLMNOPW[/color]		➔ [color=peru]CFKQRST[/color]
+							[color=peru]ADJLMNPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ADJLMOP[/color]			➔ [color=peru]CFKRST[/color]
+							[color=peru]ADJLMOPQ[/color]		➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ADJLMOPW[/color]		➔ [color=peru]CFKQRST[/color]
+							[color=peru]ADJLMPQ[/color]			➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ADJMNOP[/color]			➔ [color=peru]CFKRST[/color]
+							[color=peru]ADJMNOPW[/color]		➔ [color=peru]CFKQRST[/color]
+							[color=peru]ADJMOP[/color]				➔ [color=peru]CFKRST[/color]
+							[color=peru]ADJMOPW[/color]			➔ [color=peru]CFKQRST[/color]
+							[color=peru]ADLMNPQ[/color]			➔ [color=peru]CFKRSTW[/color]
+							[color=peru]ADLMPQ[/color]			➔ [color=peru]CFKRSTW[/color]"
+fit_content = true
+scroll_active = false

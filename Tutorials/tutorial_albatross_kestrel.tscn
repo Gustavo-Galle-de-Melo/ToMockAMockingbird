@@ -1,71 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://cptbif47l5trd"]
+[gd_scene load_steps=2 format=3 uid="uid://d0pj1i8u56apt"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_2qsjb"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_ln3gp"]
 
-[node name="Tutorial" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2qsjb")
-next = "res://menu.tscn"
+mouse_filter = 2
+script = ExtResource("1_ln3gp")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1920.0
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
 offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
 text = "Albatross and Kestrel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 124.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
 offset_top = 180.0
-offset_right = 1828.0
-offset_bottom = 927.0
+offset_right = 932.0
+offset_bottom = 852.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	One thing that all the birds we learned so far have in common, is that all birds involved in the conversation eventually say something. These birds just rearrange in what order the next birds will talk, but not whether they will talk or not. In all the rules we've seen, all the birds on the left side of the equation are on the right side of the equation, except the bird that is talking. Now we will learn about some birds that can ignore others.
-
-	Kestrel:
-[center]([b][color=green]K[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=yellow]x[/color]     or     [b][color=green]K[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color][/center]
-
-	When the kestrel hears a bird [color=yellow]x[/color], it responds by calling out a new bird [color=papaya_whip]K[/color][color=yellow]x[/color]. This new bird [color=papaya_whip]K[/color][color=yellow]x[/color] can only ever say the same thing, it always says [color=yellow]x[/color] independent of what [color=orange]y[/color] is. [color=papaya_whip]K[/color][color=yellow]x[/color] ignores whatever you say and just repeats [color=yellow]x[/color].
-
-	Albatross:
-[center]([b][color=green]A[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = [color=orange]y[/color]     or     [b][color=green]A[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=orange]y[/color][/center]
-
-	The albatross is similar to the kestrel, but instead of ignoring [color=orange]y[/color], it ignores [color=yellow]x[/color].
+text = "
+	One thing that all the birds we learned so far have in common, is that all birds involved in the conversation eventually say something. These birds just rearrange in what order the next birds will talk, but not whether they will talk or not. In all the rules we've seen, all the birds on the left side of the equation are on the right side of the equation, except the bird that is talking. Now we will learn about some birds that can ignore others.
 "
 fit_content = true
 scroll_active = false
 
-[node name="Previous" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 34.0
-offset_top = 927.0
-offset_right = 154.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Previous "
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Kestrel:
+[center]([b][color=green]K[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color] = [color=darkgoldenrod]x[/color]     or     [b][color=green]K[/color][/b] [color=darkgoldenrod]x[/color] [color=orange]y[/color] = [color=darkgoldenrod]x[/color][/center]
 
-[node name="Next" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1770.0
-offset_top = 927.0
-offset_right = 1890.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Menu "
+	When the kestrel hears a bird [color=darkgoldenrod]x[/color], it responds by calling out a new bird [color=peru]K[/color][color=darkgoldenrod]x[/color]. This new bird [color=peru]K[/color][color=darkgoldenrod]x[/color] can only ever say the same thing, it always says [color=darkgoldenrod]x[/color] independent of what [color=orange]y[/color] is. [color=peru]K[/color][color=darkgoldenrod]x[/color] ignores whatever you say and just repeats [color=darkgoldenrod]x[/color].
 
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+
+
+	Albatross:
+[center]([b][color=green]A[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color] = [color=orange]y[/color]     or     [b][color=green]A[/color][/b] [color=darkgoldenrod]x[/color] [color=orange]y[/color] = [color=orange]y[/color][/center]
+
+	The albatross is similar to the kestrel, but instead of ignoring [color=orange]y[/color], it ignores [color=darkgoldenrod]x[/color].
+"
+fit_content = true
+scroll_active = false

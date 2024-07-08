@@ -16,7 +16,8 @@ func set_tutorial(data: Tutorial_data) -> void:
 
 
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_packed(load(tutorial))
+	Player_data.get_instance().reading_tutorial = tutorial
+	get_tree().change_scene_to_packed(preload('res://Tutorials/tutorial.tscn'))
 
 
 func _on_button_down() -> void:

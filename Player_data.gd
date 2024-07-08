@@ -9,6 +9,10 @@ var section: int # latest unlocked section
 # this is used by the level scene to know what level to load
 var playing_level: int
 
+# the tutorial the player is reading
+# this is used by the tutorial scene to know what tutorial to load
+var reading_tutorial: String
+
 static var instance: Player_data
 
 

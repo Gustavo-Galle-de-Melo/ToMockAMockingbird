@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjctb7c6b0gl7"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_q3a4u"]
+[ext_resource type="Script" path="res://Tutorials0/Example_tutorial.gd" id="1_q3a4u"]
 [ext_resource type="Texture2D" uid="uid://bmifv8nfms4kr" path="res://assets/tutorial1.png" id="2_xepq7"]
 
 [node name="Tutorial" type="Control"]

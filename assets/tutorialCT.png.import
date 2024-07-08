@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3dwfd6rltnm3"
-path="res://.godot/imported/Starling.png-aa3fdec3f063f5fb4d7b508cb0f758cf.ctex"
+uid="uid://bn256rcjaqbi"
+path="res://.godot/imported/tutorialCT.png-9b63677940165af20a2c50855c09db68.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Starling.png"
-dest_files=["res://.godot/imported/Starling.png-aa3fdec3f063f5fb4d7b508cb0f758cf.ctex"]
+source_file="res://assets/tutorialCT.png"
+dest_files=["res://.godot/imported/tutorialCT.png-9b63677940165af20a2c50855c09db68.ctex"]
 
 [params]
 

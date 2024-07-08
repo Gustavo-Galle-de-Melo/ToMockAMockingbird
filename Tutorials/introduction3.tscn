@@ -1,61 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcl252alluvec"]
+[gd_scene load_steps=2 format=3 uid="uid://btg2twnoqq0g2"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_dyul3"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_3ek42"]
 
-[node name="Tutorial" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_dyul3")
+mouse_filter = 2
+script = ExtResource("1_3ek42")
 previous = "res://Tutorials/introduction2.tscn"
-next = "res://menu.tscn"
+next = "res://Tutorials/introduction4.tscn"
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 180.0
-theme_override_font_sizes/font_size = 80
-text = "Introduction to birds"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = 180.0
-offset_right = 1828.0
-offset_bottom = 878.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
+offset_top = 121.0
+offset_right = 932.0
+offset_bottom = 415.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	Now that we know some birds we can start to learn about them. One interesting place to start is by trying to figure out what is [color=papaya_whip]C[/color]’s response to [color=papaya_whip]T[/color]. From what we have learned so far, there doesn't seem to be a rule telling us what this bird is. One way of finding out what bird it is, is by calling out the name of a new bird [color=yellow]x[/color] to it and seeing how it responds. When [color=papaya_whip]C[/color][color=papaya_whip]T[/color] hears [color=yellow]x[/color], it responds by calling out ([color=papaya_whip]CT[/color])[color=yellow]x[/color], which is closer to [color=papaya_whip]C[/color]’s rule, (([color=papaya_whip]C[/color][color=papaya_whip]x[/color])[color=yellow]y[/color])[color=orange]z[/color]=…, but not quite there yet. We can try calling out the name of another bird [color=orange]y[/color]. When we do this, ([color=papaya_whip]CT[/color])[color=yellow]x[/color] responds with (([color=papaya_whip]CT[/color])[color=yellow]x[/color])[color=orange]y[/color]. But now we can apply what we know about [color=papaya_whip]C[/color]: whenever the conversation of the birds looks like (([color=papaya_whip]Cx[/color])[color=yellow]y[/color])[color=orange]z[/color], the result is ([color=papaya_whip]x[/color][color=orange]z[/color])[color=yellow]y[/color]. So (([color=papaya_whip]CT[/color])[color=yellow]x[/color])[color=orange]y[/color] is the same as ([color=papaya_whip]T[/color][color=orange]y[/color])[color=yellow]x[/color]. But now we can apply [color=papaya_whip]T[/color]’s rule: whenever the conversation looks like ([color=papaya_whip]T[/color][color=orange]x[/color])[color=yellow]y[/color], the result is [color=yellow]y[/color][color=orange]x[/color]. Therefore ([color=papaya_whip]T[/color][color=orange]y[/color])[color=yellow]x[/color] is the same as [color=yellow]x[/color][color=orange]y[/color]. So [color=papaya_whip]CT[/color] is a bird [color=papaya_whip]?[/color] with the property that ([color=papaya_whip]?[/color][color=yellow]x[/color])[color=orange]y[/color] = [color=yellow]x[/color][color=orange]y[/color], we happen to know such a bird: [color=papaya_whip]P[/color]. If we call out [color=yellow]x[/color] to [color=papaya_whip]P[/color], [color=papaya_whip]P[/color] will respond with [color=yellow]x[/color]. If we then call out [color=orange]y[/color] to [color=yellow]x[/color] we get [color=yellow]x[/color][color=orange]y[/color] just like in the case for [color=papaya_whip]CT[/color]. So we have figured out that whenever [color=papaya_whip]C[/color] hears [color=papaya_whip]T[/color], it responds with [color=papaya_whip]P[/color].
+text = "	Parrot: A parrot is a bird [color=peru]P[/color] that satisfies the following condition for any bird [color=darkgoldenrod]x[/color]:
+[center][b][color=green]P[/color][/b] [color=darkgoldenrod]x[/color] = [color=darkgoldenrod]x[/color][/center]
+	In other words, whenever you call out the name of a bird [color=darkgoldenrod]x[/color] to [color=peru]P[/color], [color=peru]P[/color] will simply repeat [color=darkgoldenrod]x[/color] back to you. Superficially, the bird [color=peru]P[/color] appears to have no intelligence or imagination; all it can do is repeat what it hears. For this reason, in the past, thoughtless students of ornithology referred to it as the idiot bird. Because of this, this bird is almost always referred to as the bird [color=peru]I[/color], but we will refrain from using this name here and will stick to [color=peru]P[/color] instead.
+
+	Thrush: A thrush, also known as [color=peru]T[/color], is a bit more complicated, for any birds [color=darkgoldenrod]x[/color] and [color=orange]y[/color], the following condition holds:
+[center]([b][color=green]T[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color] = [color=orange]y[/color] [color=darkgoldenrod]x[/color][/center]
 "
 fit_content = true
 scroll_active = false
 
-[node name="Previous" type="Button" parent="."]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 927.0
-offset_right = 154.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Previous "
-
-[node name="Next" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1770.0
-offset_top = 927.0
-offset_right = 1890.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Menu "
-
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 287.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Whenever [color=peru]T[/color] hears the name of another bird [color=darkgoldenrod]x[/color], it responds with the name of a bird [color=peru]T[/color][color=darkgoldenrod]x[/color]. Once this new [color=peru]T[/color][color=darkgoldenrod]x[/color] bird hears the name of yet another bird [color=orange]y[/color], it then responds with what [color=orange]y[/color] would have said if it heard [color=darkgoldenrod]x[/color].
+"
+fit_content = true
+scroll_active = false

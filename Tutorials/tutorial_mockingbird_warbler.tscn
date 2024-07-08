@@ -1,71 +1,69 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwbb8kfvo5uoi"]
+[gd_scene load_steps=2 format=3 uid="uid://wknaivfjbmft"]
 
-[ext_resource type="Script" path="res://Tutorials/Example_tutorial.gd" id="1_d12jp"]
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_lqbl5"]
 
-[node name="Tutorial" type="Control"]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_d12jp")
-next = "res://menu.tscn"
+mouse_filter = 2
+script = ExtResource("1_lqbl5")
 
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_right = 1920.0
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
 offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
-text = "Mockingbird and Warbler"
+text = "Mockingbird
+and Warbler"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 124.0
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
 offset_top = 180.0
-offset_right = 1828.0
-offset_bottom = 927.0
+offset_right = 932.0
+offset_bottom = 852.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 30
 theme_override_font_sizes/bold_font_size = 30
 theme_override_font_sizes/italics_font_size = 30
 theme_override_font_sizes/bold_italics_font_size = 30
 theme_override_font_sizes/mono_font_size = 30
 bbcode_enabled = true
-text = "	Now that you have some experience rearranging and ignoring birds, it’s time to finally bring back the mockingbird and introduce one of its friends.
+text = "
+
+
+	Now that you have some experience rearranging and ignoring birds, it’s time to finally bring back the mockingbird and introduce one of its friends.
 
 	Mockingbird:
-[center][b][color=green]M[/color][/b] [color=yellow]x[/color] = [color=yellow]x[/color] [color=yellow]x[/color][/center]
+[center][b][color=green]M[/color][/b] [color=darkgoldenrod]x[/color] = [color=darkgoldenrod]x[/color] [color=darkgoldenrod]x[/color][/center]
 
 	Warbler:
-[center]([b][color=green]W[/color][/b] [color=yellow]x[/color]) [color=orange]y[/color] = ([color=yellow]x[/color] [color=orange]y[/color]) [color=orange]y[/color]     or     [b][color=green]W[/color][/b] [color=yellow]x[/color] [color=orange]y[/color] = [color=yellow]x[/color] [color=orange]y[/color] [color=orange]y[/color][/center]
-
-	Both of these birds allow other birds to talk multiple times during a conversation. Using them together with the albatross and kestrel, you can make any bird talk exactly as many times as you want them to.
-
-	Here’s something fun to think about: What happens if the mockingbird mocks itself (e.g. [color=papaya_whip]MM[/color])?
-"
+[center]([b][color=green]W[/color][/b] [color=darkgoldenrod]x[/color]) [color=orange]y[/color] = ([color=darkgoldenrod]x[/color] [color=orange]y[/color]) [color=orange]y[/color]     or     [b][color=green]W[/color][/b] [color=darkgoldenrod]x[/color] [color=orange]y[/color] = [color=darkgoldenrod]x[/color] [color=orange]y[/color] [color=orange]y[/color][/center]"
 fit_content = true
 scroll_active = false
 
-[node name="Previous" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 34.0
-offset_top = 927.0
-offset_right = 154.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Previous "
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 583.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	Both of these birds allow other birds to talk multiple times during a conversation. Using them together with the albatross and kestrel, you can make any bird talk exactly as many times as you want them to.
 
-[node name="Next" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1770.0
-offset_top = 927.0
-offset_right = 1890.0
-offset_bottom = 990.0
-theme_override_font_sizes/font_size = 40
-text = " Menu "
-
-[connection signal="pressed" from="Previous" to="." method="_on_previous_pressed"]
-[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+	Here’s something fun to think about: What happens if the mockingbird mocks itself (e.g. [color=peru]MM[/color])?
+"
+fit_content = true
+scroll_active = false
