@@ -3,11 +3,11 @@ extends Control
 static var mouse_position: Vector2 = Vector2(0, 0)
 var camera_movement_enabled: bool = false
 
-# TODO remove this
+var is_mouse_over_settings_button: bool = false
+
 @export var demo: bool = false
 
 func _ready() -> void:
-	# TODO remove this
 	if demo:
 		Player_data.get_instance().set_section(15)
 
@@ -47,12 +47,13 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("exit_interface") and event.pressed \
-		and not $CanvasLayer/Settings_menu.is_mouse_over:
+			and not $CanvasLayer/Settings_menu.is_mouse_over \
+			and not is_mouse_over_settings_button:
 		$CanvasLayer/Settings_menu.visible = false
 
 
 func _on_settings_button_pressed() -> void:
-	$CanvasLayer/Settings_menu.visible = true
+	$CanvasLayer/Settings_menu.visible = not $CanvasLayer/Settings_menu.visible
 
 
 func _on_settings_button_down() -> void:
@@ -62,3 +63,11 @@ func _on_settings_button_down() -> void:
 func _on_scroll_cooldown_timeout() -> void:
 	camera_movement_enabled = true
 	$Mouse/Camera.position_smoothing_speed = 5
+
+
+func _on_settings_button_mouse_entered() -> void:
+	is_mouse_over_settings_button = true
+
+
+func _on_settings_button_mouse_exited() -> void:
+	is_mouse_over_settings_button = false

@@ -15,7 +15,7 @@ static var levels_and_tutorials: Array = [
 # new: C, P, T
 	Tutorial_data.new(1, "Introduction to birds", "res://Tutorials/introduction1.tscn"),
 	Tutorial_data.new(1, "How to play", "res://Tutorials/how_to_play1.tscn"),
-	Level_data.new(1, "CT", "P", 2, "This is the case discussed in the introduction: CT = P"),
+	Level_data.new(1, "CT", "P", 2, "This is the situation discussed in the introduction: CT = P"),
 	# P = C T
 	Level_data.new(1, "CP", "T", 2, "If you are lost just guess the answer, but make sure to understand why it worked"),
 	# T = C P
@@ -312,9 +312,6 @@ static var levels_and_tutorials: Array = [
 	# J = K M {M = S (S S) S A, A = S K} = S (S B K) {B = S (K S) K}
 	Level_data.new(15, "FQ", "P", 10, "Good luck!"),
 	# P = Q (F (Q F)) (Q (Q F (Q Q Q)))
-	
-	# maybe
-	#Tutorial_data.new(15, "The end (TODO)", "res://Tutorials/tutorial_starling.tscn"),
 ]
 
 # VS Code regex to generate the solution list:

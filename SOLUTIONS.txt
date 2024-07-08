@@ -22,7 +22,7 @@
 	AC->K 2		# K = C A
 	AR->K 3		# K = R A R
 	CK->A 2		# A = C K
-	CK->P 3		# P = C K _
+	CK->P 3		# P = A _ {A = C K}
 	KR->A 3		# A = R K R
 	AR->T 4		# T = R (A _) R
 	KR->P 3		# P = R _ K
@@ -136,7 +136,7 @@
 	FPQ->T 8	# T = Q (Q F Q) (F P (Q Q))
 	
 # turing completeness section:
-	"All birds (TODO)"
+	"All birds"
 	KS->P 3		# P = A _ {A = S K}
 	KS->A 2		# A = S K
 	KS->O 4		# O = S P = {P = A K, A = S K}
@@ -154,7 +154,7 @@
 	KS->F 17	# F = S (K (S (S (K S) (S (K O) K)))) (S (K K) K) {O = S P, P = A _, A = S K}
 	
 # hardest levels:
-	"Final challenges (TODO)"
+	"Final challenges"
 	BCM->W 5		# W = C (B M R) {R = C C}
 	KMQ->T 11		# T = Q (Q (Q (Q K Q) Q) (Q J)) M {J = K M}
 	FQ->P 11		# P = Q (Q F Q) (F Q (F (Q F) (Q F)))
@@ -170,7 +170,7 @@
 	CFKNO->B 38		# B = C (C (N (T (C (N (C (C (T K) (C (C (N F) N) P)))) (T (C O (R (C (K (C O T)))))))) P) C) {T = C P, P = N C, R = C C}
 	
 # 'impossible' levels:
-	"Optimization (TODO)"
+	"Bonus"
 	DT->R 15	# R = D (T (D T)) (D D (D (D (T T) (T T)))) (D D T)
 	KS->N 7		# N = S (S (K (S S)) K) K
 	KS->M 6		# M = S (S S) S A {A = S K}

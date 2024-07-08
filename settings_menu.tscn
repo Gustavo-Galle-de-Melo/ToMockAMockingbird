@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2llwx2eh21li"]
+[gd_scene load_steps=3 format=3 uid="uid://d2llwx2eh21li"]
 
 [ext_resource type="Script" path="res://Settings_menu.gd" id="1_wquib"]
+[ext_resource type="Texture2D" uid="uid://c7sl81ogjg3t" path="res://assets/settingsMenu.png" id="2_sy2rm"]
 
 [node name="Settings_menu" type="Control"]
 custom_minimum_size = Vector2(500, 200)
@@ -14,40 +15,92 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wquib")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_sy2rm")
+
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 200.0
 mouse_filter = 1
 color = Color(0.137255, 0.164706, 0.176471, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 500.0
-offset_bottom = 200.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Full_string" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Full_string" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="CheckButton" type="CheckButton" parent="HBoxContainer/VBoxContainer/Full_string"]
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/Full_string"]
 layout_mode = 2
 focus_mode = 0
 mouse_filter = 1
+theme_override_font_sizes/font_size = 20
 button_pressed = true
 text = "Show all parenthesis"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer/Full_string"]
-custom_minimum_size = Vector2(190, 0)
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/Full_string"]
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "e.g. ((A ((B C) D)) x) (y z)"
+fit_content = true
+
+[node name="Music" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/Music"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music                    "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Music"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/Music/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 1
+value = 50.0
+scrollable = false
+
+[node name="SoundEffects" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/SoundEffects"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Sound effects      "
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/SoundEffects"]
+layout_mode = 2
+alignment = 1
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SoundEffects/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 1
+value = 50.0
+scrollable = false
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
-[connection signal="toggled" from="HBoxContainer/VBoxContainer/Full_string/CheckButton" to="." method="_on_full_string_toggled"]
+[connection signal="toggled" from="VBoxContainer/Full_string/CheckButton" to="." method="_on_full_string_toggled"]
+[connection signal="value_changed" from="VBoxContainer/Music/VBoxContainer/HSlider" to="." method="_on_music_volume_changed"]
+[connection signal="value_changed" from="VBoxContainer/SoundEffects/VBoxContainer/HSlider" to="." method="_on_sound_effects_volume_changed"]

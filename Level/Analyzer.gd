@@ -24,14 +24,18 @@ func set_bird(bird: Bird, full_bird_size: int) -> void:
 	total_true_vars = 0
 	history = []
 	halted = false
+	$Previous.disabled = true
+	$Next.disabled = false
 	wait()
 
 
 func _on_previous_pressed() -> void:
 	halted = false
+	$Next.disabled = false
 	
 	if len(history) < 2:
 		set_bird(initial_bird, full_bird_size)
+		$Previous.disabled = true
 		return
 	
 	history.pop_back()
@@ -46,6 +50,8 @@ func _on_next_pressed() -> void:
 	if halted:
 		return
 	
+	$Previous.disabled = false
+	
 	if not waiting:
 		wait()
 		return
@@ -59,6 +65,7 @@ func _on_next_pressed() -> void:
 		$Rule.text = "This is a " + final_bird.full_name if final_bird else "Unknown bird"
 		history.append([current_bird, next_var])
 		halted = true
+		$Next.disabled = true
 		found_bird()
 		return
 	
@@ -96,6 +103,7 @@ func _on_next_pressed() -> void:
 			$Rule.text = "[hint=The imaginary birds could not be removed]Invalid bird[/hint]"
 			history.append([current_bird, next_var])
 			halted = true
+			$Next.disabled = true
 			return
 		elif elimination.rule:
 			$Before.text = elimination.string_before
@@ -108,6 +116,7 @@ func _on_next_pressed() -> void:
 		final_bird = Bird_list.get_bird_from_expression(current_bird, total_true_vars)
 		history.append([current_bird, next_var])
 		halted = true
+		$Next.disabled = true
 		
 		if final_bird and Player_data.get_instance().is_known(final_bird):
 			# backward evaluation

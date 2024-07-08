@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtp7r7xxc2oev"]
+
+[ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_wd7ee"]
+[ext_resource type="Texture2D" uid="uid://be2ugav6u1l2v" path="res://assets/tutorialGoal.png" id="2_yuryn"]
+[ext_resource type="Texture2D" uid="uid://dxykugf735hbt" path="res://assets/tutorialAvailableBirds.png" id="3_nxjd4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wd7ee")
+next = "res://Tutorials/how_to_play2.tscn"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 78.0
+offset_top = 44.0
+offset_right = 960.0
+offset_bottom = 180.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "How to play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 104.0
+offset_top = 180.0
+offset_right = 932.0
+offset_bottom = 432.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "
+	The objective of the game is to find a certain bird by having a conversation with the birds available.
+
+	The bird you are trying to find will be on the top left corner of the screen."
+fit_content = true
+scroll_active = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 1004.0
+offset_top = 121.0
+offset_right = 1832.0
+offset_bottom = 287.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/mono_font_size = 30
+bbcode_enabled = true
+text = "	On the right side of the screen there will be a list of all birds you can use. Whenever you find a new bird it will go there.
+
+
+
+
+
+
+
+
+
+
+
+	You can drag these birds to the nest to work out the solution to the puzzle."
+fit_content = true
+scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 347.0
+offset_top = 479.0
+offset_right = 680.0
+offset_bottom = 801.0
+texture = ExtResource("2_yuryn")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 1128.0
+offset_top = 306.0
+offset_right = 1695.0
+offset_bottom = 628.0
+texture = ExtResource("3_nxjd4")
+stretch_mode = 4

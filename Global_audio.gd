@@ -3,8 +3,6 @@
 # but it seems more convenient to use it for all sounds
 extends Node
 
-# TODO autoplay music
-
 func play_click() -> void:
 	$Click.play()
 

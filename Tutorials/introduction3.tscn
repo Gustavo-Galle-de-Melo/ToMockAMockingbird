@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://btg2twnoqq0g2"]
+[gd_scene load_steps=3 format=3 uid="uid://btg2twnoqq0g2"]
 
 [ext_resource type="Script" path="res://Tutorials/Content.gd" id="1_3ek42"]
+[ext_resource type="Texture2D" uid="uid://5uhqbvjig1ng" path="res://assets/tutorialT.png" id="2_gujps"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -15,6 +16,7 @@ previous = "res://Tutorials/introduction2.tscn"
 next = "res://Tutorials/introduction4.tscn"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 104.0
 offset_top = 121.0
 offset_right = 932.0
@@ -37,6 +39,7 @@ fit_content = true
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 1004.0
 offset_top = 121.0
 offset_right = 1832.0
@@ -52,3 +55,13 @@ text = "	Whenever [color=peru]T[/color] hears the name of another bird [color=da
 "
 fit_content = true
 scroll_active = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1129.0
+offset_top = 308.0
+offset_right = 1661.0
+offset_bottom = 901.0
+texture = ExtResource("2_gujps")
+expand_mode = 1
+stretch_mode = 4

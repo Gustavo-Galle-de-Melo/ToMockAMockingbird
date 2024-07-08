@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dfwjwrmdgluia"]
 
 [ext_resource type="Script" path="res://Global_audio.gd" id="1_4k0go"]
-[ext_resource type="AudioStream" uid="uid://gud36rjhkwc3" path="res://assets/music0.mp3" id="1_w4rml"]
+[ext_resource type="AudioStream" uid="uid://gud36rjhkwc3" path="res://assets/music.mp3" id="1_w4rml"]
 [ext_resource type="AudioStream" uid="uid://bw4xd1kwda77e" path="res://assets/click.mp3" id="3_m5r7e"]
 [ext_resource type="AudioStream" uid="uid://c2apnciraweb4" path="res://assets/page.mp3" id="4_nxj7i"]
 [ext_resource type="AudioStream" uid="uid://dmkrvcjd67dt1" path="res://assets/win.mp3" id="5_fkl8v"]
@@ -11,13 +11,20 @@ script = ExtResource("1_4k0go")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_w4rml")
+volume_db = -6.558
+autoplay = true
+bus = &"Music"
 
 [node name="Click" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m5r7e")
-volume_db = -13.372
+volume_db = -16.183
+bus = &"Sound Effects"
 
 [node name="Page" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_nxj7i")
+bus = &"Sound Effects"
 
 [node name="Win" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fkl8v")
+volume_db = -5.622
+bus = &"Sound Effects"

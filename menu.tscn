@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_byeje"]
 [ext_resource type="Texture2D" uid="uid://cops7pr6ekpxr" path="res://assets/settings.png" id="2_lfjkg"]
-[ext_resource type="Texture2D" uid="uid://3q45vkfgolth" path="res://assets/cloud0.png" id="2_ql2rf"]
-[ext_resource type="Texture2D" uid="uid://cl6cmf7xfd8l4" path="res://assets/cloud1.png" id="2_w3mbw"]
+[ext_resource type="Texture2D" uid="uid://3q45vkfgolth" path="res://assets/cloud1.png" id="2_ql2rf"]
+[ext_resource type="Texture2D" uid="uid://cl6cmf7xfd8l4" path="res://assets/cloud2.png" id="2_w3mbw"]
 [ext_resource type="PackedScene" uid="uid://d2llwx2eh21li" path="res://settings_menu.tscn" id="3_7681u"]
 
 [node name="Menu" type="Control"]
@@ -14,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_byeje")
-demo = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -145,5 +144,7 @@ one_shot = true
 autostart = true
 
 [connection signal="button_down" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_down"]
+[connection signal="mouse_entered" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_mouse_exited"]
 [connection signal="pressed" from="CanvasLayer/Settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="timeout" from="Scroll_cooldown" to="." method="_on_scroll_cooldown_timeout"]

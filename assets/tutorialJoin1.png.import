@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bopj7g6lmvdrn"
-path="res://.godot/imported/allBirdsHitbox.png-2619bf981196300f41aa4530cfab229c.ctex"
+uid="uid://c4lmr2dj7s4su"
+path="res://.godot/imported/tutorialJoin1.png-a241a46f8db9b1b832ab67a0fbeb1189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/allBirdsHitbox.png"
-dest_files=["res://.godot/imported/allBirdsHitbox.png-2619bf981196300f41aa4530cfab229c.ctex"]
+source_file="res://assets/tutorialJoin1.png"
+dest_files=["res://.godot/imported/tutorialJoin1.png-a241a46f8db9b1b832ab67a0fbeb1189.ctex"]
 
 [params]
 
