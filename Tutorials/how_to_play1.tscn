@@ -16,6 +16,7 @@ script = ExtResource("1_wd7ee")
 next = "res://Tutorials/how_to_play2.tscn"
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 78.0
 offset_top = 44.0
 offset_right = 960.0
@@ -27,6 +28,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 104.0
 offset_top = 180.0
 offset_right = 932.0
@@ -46,6 +48,7 @@ fit_content = true
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 1004.0
 offset_top = 121.0
 offset_right = 1832.0
@@ -74,6 +77,7 @@ fit_content = true
 scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 347.0
 offset_top = 479.0
 offset_right = 680.0
@@ -82,6 +86,7 @@ texture = ExtResource("2_yuryn")
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 1128.0
 offset_top = 306.0
 offset_right = 1695.0

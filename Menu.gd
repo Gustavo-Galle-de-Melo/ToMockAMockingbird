@@ -21,6 +21,9 @@ func _ready() -> void:
 	$CanvasLayer/Transition.visible = true
 	
 	var center: Vector2 = get_viewport_rect().size / 2
+	var limit_right: float = 0
+	var level_button_scene: PackedScene = preload("res://level_button.tscn")
+	var tutorial_button_scene: PackedScene = preload("res://Tutorials/tutorial_button.tscn")
 	
 	# add level and tutorial buttons
 	Level_loader.number_levels()
@@ -28,14 +31,16 @@ func _ready() -> void:
 		var level_or_tutorial = Level_loader.levels_and_tutorials[i]
 		var button
 		if level_or_tutorial is Level_data:
-			button = preload("res://level_button.tscn").instantiate()
+			button = level_button_scene.instantiate()
 			button.set_number(level_or_tutorial.number)
 		else:
-			button = preload("res://Tutorials/tutorial_button.tscn").instantiate()
+			button = tutorial_button_scene.instantiate()
 			button.set_tutorial(level_or_tutorial)
 		button.position = center + Vector2(300 * (i - 2) - 125, - 150 * sin((i - 2) * PI / 4) - 125)
-		$Mouse/Camera.limit_right = button.position.x + center.x + 125
+		limit_right = button.position.x + center.x + 125
 		add_child(button)
+	
+	$Mouse/Camera.limit_right = limit_right
 
 
 func _process(delta: float) -> void:

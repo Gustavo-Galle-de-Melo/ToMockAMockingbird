@@ -16,6 +16,7 @@ script = ExtResource("1_fp0il")
 previous = "res://Tutorials/how_to_play1.tscn"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 104.0
 offset_top = 121.0
 offset_right = 932.0
@@ -43,6 +44,7 @@ fit_content = true
 scroll_active = false
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 1004.0
 offset_top = 121.0
 offset_right = 1832.0
@@ -61,6 +63,7 @@ fit_content = true
 scroll_active = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 173.0
 offset_top = 266.0
 offset_right = 499.0
@@ -70,6 +73,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 575.0
 offset_top = 266.0
 offset_right = 901.0

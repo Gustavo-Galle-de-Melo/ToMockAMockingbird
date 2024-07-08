@@ -22,7 +22,7 @@ static var levels_and_tutorials: Array = [
 
 # new: R
 	Tutorial_data.new(2, "Robin", "res://Tutorials/tutorial_robin.tscn"),
-	Level_data.new(2, "CPT", "R", 2, "It's possible to find the Robin using only one of these birds"),
+	Level_data.new(2, "CPT", "R", 2, "It's possible to find the Robin using the same bird twice"),
 	# R = C C
 	Level_data.new(2, "R", "C", 3, "This can be done with a bird of size 3"),
 	# C = R R R
@@ -83,7 +83,7 @@ static var levels_and_tutorials: Array = [
 	# R = B B T
 	Level_data.new(5, "BT", "P", 6, "Remember the previous levels and try to find the Robin"),
 	# P = B (T T) R {R = B B T}
-	Level_data.new(5, "BKT", "P", 4, "This can be done with a bird of size 4"),
+	Level_data.new(5, "BKT", "P", 4, "Remember the previous levels and try to find the Robin"),
 	# P = B (T _) K
 	Level_data.new(5, "BT", "C", 8, "Remember the previous levels and try to find the Robin"),
 	# C = B (T R) R {R = B B T}
